@@ -1,1 +1,1293 @@
+<!DOCTYPE html>
+<html lang="nl">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Harder Coaching | Van goed fysiek naar buitengewoon fysiek</title>
+
+<style>
+
+:root {
+
+    --red:#780000;
+    --red-hover:#5a0000;
+
+    --dark:#111111;
+    --dark-card:#1c1c1c;
+
+    --light:#F2F2F2;
+    --white:#ffffff;
+
+    --text:#111111;
+    --gray:#555555;
+
+}
+
+
+* {
+
+    box-sizing:border-box;
+
+}
+
+
+body {
+
+    margin:0;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:var(--light);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+}
+
+
+h1,h2,h3 {
+
+    line-height:1.2;
+
+}
+
+
+h1 {
+
+    font-size:60px;
+
+}
+
+
+h2 {
+
+    font-size:42px;
+
+}
+
+
+h3 {
+
+    font-size:25px;
+
+}
+
+
+p {
+
+    font-size:18px;
+
+    color:var(--gray);
+
+}
+
+
+
+.container {
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:90px 25px;
+
+}
+
+
+
+.center {
+
+    text-align:center;
+
+}
+
+
+
+/* BUTTONS */
+
+
+.btn {
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:16px 35px;
+
+    background:var(--red);
+
+    color:white !important;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+
+.btn:hover {
+
+    background:var(--red-hover);
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero {
+
+    min-height:85vh;
+
+    display:flex;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.8)
+    ),
+
+    url("hero.jpg");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:white;
+
+}
+
+
+
+.hero h1 {
+
+    color:white;
+
+}
+
+
+.hero p {
+
+    color:white;
+
+    max-width:850px;
+
+    margin:25px auto;
+
+}
+
+
+.hero .red {
+
+    color:#ffdddd;
+
+}
+
+
+
+
+
+/* GRIDS */
+
+
+.grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+/* CARDS */
+
+
+.card {
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+.card p {
+
+    color:var(--gray);
+
+}
+
+
+
+.accent {
+
+    border-top:5px solid var(--red);
+
+}
+
+
+
+
+
+/* DARK SECTIONS */
+
+
+.dark {
+
+    background:var(--dark);
+
+    color:white;
+
+}
+
+
+.dark h2,
+.dark h3 {
+
+    color:white;
+
+}
+
+
+.dark p {
+
+    color:#dddddd;
+
+}
+
+
+
+.dark .card {
+
+    background:var(--dark-card);
+
+    color:white;
+
+}
+
+
+.dark .card h3 {
+
+    color:white;
+
+}
+
+
+.dark .card p {
+
+    color:#dddddd;
+
+}
+
+
+.dark li {
+
+    color:#eeeeee;
+
+}
+
+
+
+
+
+/* TESTIMONIAL */
+
+
+.testimonial {
+
+    background:var(--dark-card);
+
+    padding:35px;
+
+    border-radius:15px;
+
+    color:white;
+
+}
+
+
+.testimonial h3 {
+
+    color:white;
+
+}
+
+
+.testimonial p {
+
+    color:#dddddd;
+
+}
+
+
+
+
+
+/* COMPARISON */
+
+
+.compare {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+}
+
+
+
+.problem {
+
+    border-left:
+    5px solid var(--red);
+
+}
+
+
+.solution {
+
+    border-left:
+    5px solid #1b4332;
+
+}
+
+
+
+
+
+/* PRICE */
+
+
+.price {
+
+    font-size:38px;
+
+    font-weight:bold;
+
+    color:var(--red);
+
+}
+
+
+
+.dark .price {
+
+    color:white;
+
+}
+
+
+
+
+
+/* FAQ */
+
+
+details {
+
+    background:white;
+
+    padding:22px;
+
+    margin-bottom:15px;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.05);
+
+}
+
+
+summary {
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* FINAL CTA */
+
+
+.final {
+
+    background:var(--red);
+
+    color:white;
+
+    text-align:center;
+
+}
+
+
+.final h2 {
+
+    color:white;
+
+}
+
+
+.final p {
+
+    color:white;
+
+}
+
+
+
+.final .btn {
+
+    background:white;
+
+    color:var(--red) !important;
+
+}
+
+
+.final .btn:hover {
+
+    background:#eeeeee;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+footer {
+
+    background:#080808;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+h1 {
+
+    font-size:38px;
+
+}
+
+
+h2 {
+
+    font-size:32px;
+
+}
+
+
+.compare {
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<section class="hero">
+
+<div class="container">
+
+
+<h1>
+
+Je traint al jaren serieus.
+<br>
+
+Ik help je de <span class="red">puntjes op de i</span> te zetten.
+
+</h1>
+
+
+<p>
+
+Je mist geen trainingen, let op je voeding en hebt een sterk fysiek opgebouwd.
+
+Maar op jouw niveau zit de grootste winst niet meer in harder werken.
+
+</p>
+
+
+<p>
+
+De verschillen worden gemaakt door betere training, slimme strategie en maximale presentatie.
+
+</p>
+
+
+<a class="btn" href="#contact">
+
+Bekijk of coaching bij jou past
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="container">
+
+
+<div class="center">
+
+<h2>
+
+Van goed fysiek naar buitengewoon fysiek
+
+</h2>
+
+
+<p>
+
+Harder Coaching helpt serieuze lifters en natural bodybuilders om de laatste 10-20% uit hun ontwikkeling te halen.
+
+</p>
+
+</div>
+
+
+
+<div class="grid">
+
+
+<div class="card accent">
+
+<h3>
+
+Training
+
+</h3>
+
+<p>
+
+Verbeter techniek, intensiteit en uitvoering zodat iedere set maximale spiergroei stimuleert.
+
+</p>
+
+</div>
+
+
+
+<div class="card accent">
+
+<h3>
+
+Strategie
+
+</h3>
+
+<p>
+
+Een duidelijk plan zodat je weet wanneer je moet groeien, cutten en bijsturen.
+
+</p>
+
+</div>
+
+
+
+<div class="card accent">
+
+<h3>
+
+Presentatie
+
+</h3>
+
+<p>
+
+Leer jouw fysiek beter presenteren via posing, controle en uitstraling.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="dark">
+
+
+<div class="container">
+
+
+<div class="center">
+
+<h2>
+
+Je doet alles goed. Toch voelt het alsof er meer in zit.
+
+</h2>
+
+</div>
+
+
+<p>
+
+Je traint al jaren serieus. Je hebt discipline, houdt je voeding bij en hebt al een sterk fysiek opgebouwd.
+
+</p>
+
+
+<p>
+
+Maar de laatste stap vraagt meer dan motivatie.
+
+Het vraagt om de juiste techniek, de juiste timing en iemand die weet welke knop wanneer moet worden aangepast.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="container">
+
+
+<div class="center">
+
+<h2>
+
+Wat je krijgt met Harder Coaching
+
+</h2>
+
+
+</div>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+Techniek optimalisatie
+
+</h3>
+
+<p>
+
+Video analyses om iedere oefening efficiënter uit te voeren.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+Persoonlijke strategie
+
+</h3>
+
+<p>
+
+Een roadmap voor jouw groeifase, cut of wedstrijdvoorbereiding.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+Data & feedback
+
+</h3>
+
+<p>
+
+Training, voeding en herstel gebruiken om betere beslissingen te maken.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="dark">
+
+
+<div class="container">
+
+
+<div class="center">
+
+<h2>
+
+Resultaten van cliënten
+
+</h2>
+
+</div>
+
+
+
+<div class="grid">
+
+
+<div class="testimonial">
+
+<h3>
+
+Cliënt resultaat
+
+</h3>
+
+<p>
+
+Voeg hier jouw Instagram testimonial toe.
+
+</p>
+
+<a class="btn" href="#">
+
+Bekijk Instagram
+
+</a>
+
+</div>
+
+
+
+<div class="testimonial">
+
+<h3>
+
+Cliënt resultaat
+
+</h3>
+
+<p>
+
+Voeg hier jouw Instagram testimonial toe.
+
+</p>
+
+<a class="btn" href="#">
+
+Bekijk Instagram
+
+</a>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="container">
+
+
+<div class="center">
+
+<h2>
+
+Zo pak je het nu aan vs. Harder Coaching
+
+</h2>
+
+</div>
+
+
+
+<div class="compare">
+
+
+<div class="card problem">
+
+
+<h3>
+
+Zonder plan
+
+</h3>
+
+
+<ul>
+
+<li>Je maakt keuzes op gevoel</li>
+
+<li>Je wisselt vaak van aanpak</li>
+
+<li>Je weet niet wanneer je moet aanpassen</li>
+
+<li>Je fysiek komt niet maximaal naar voren</li>
+
+</ul>
+
+
+</div>
+
+
+
+<div class="card solution">
+
+
+<h3>
+
+Met Harder Coaching
+
+</h3>
+
+
+<ul>
+
+<li>Elke keuze heeft een reden</li>
+
+<li>Je volgt een duidelijke roadmap</li>
+
+<li>Je krijgt objectieve feedback</li>
+
+<li>Je haalt meer uit je fysiek</li>
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="dark">
+
+
+<div class="container">
+
+
+<div class="center">
+
+
+<h2>
+
+Persoonlijke coaching
+
+</h2>
+
+
+<p>
+
+Geen standaard schema. Geen algemene adviezen.
+
+Een plan afgestemd op jouw niveau en doel.
+
+</p>
+
+
+</div>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+
+<h3>
+
+Wekelijkse coaching
+
+</h3>
+
+
+<div class="price">
+
+€279 / maand
+
+</div>
+
+
+<ul>
+
+<li>Wekelijkse check-in</li>
+
+<li>Trainingsanalyse</li>
+
+<li>Voedingsbegeleiding</li>
+
+<li>Doorlopende feedback</li>
+
+</ul>
+
+
+<a class="btn" href="#contact">
+
+Start intake
+
+</a>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h3>
+
+Tweewekelijkse coaching
+
+</h3>
+
+
+<div class="price">
+
+€199 / maand
+
+</div>
+
+
+<ul>
+
+<li>Tweewekelijkse check-in</li>
+
+<li>Strategische begeleiding</li>
+
+<li>Trainingsadvies</li>
+
+<li>Feedback wanneer nodig</li>
+
+</ul>
+
+
+<a class="btn" href="#contact">
+
+Bekijk mogelijkheden
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="container">
+
+
+<div class="center">
+
+<h2>
+
+Hoe het werkt
+
+</h2>
+
+</div>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+
+1. Intake
+
+</h3>
+
+<p>
+
+We bekijken jouw huidige situatie, doelen en grootste obstakels.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+2. Plan
+
+</h3>
+
+<p>
+
+Je krijgt een strategie voor training, voeding en ontwikkeling.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+3. Optimaliseren
+
+</h3>
+
+<p>
+
+Door feedback sturen we continu bij richting jouw beste fysiek.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="container">
+
+
+<div class="center">
+
+<h2>
+
+Veelgestelde vragen
+
+</h2>
+
+</div>
+
+
+
+<details>
+
+<summary>
+
+Voor wie is Harder Coaching?
+
+</summary>
+
+<p>
+
+Voor serieuze lifters, natural bodybuilders en sporters met een duidelijk fysiek doel.
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+
+Moet ik wedstrijden doen?
+
+</summary>
+
+<p>
+
+Nee. Coaching is ook geschikt voor recreatieve lifters en fotoshootdoelen.
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+
+Wat maakt dit anders?
+
+</summary>
+
+<p>
+
+De focus ligt op het optimaliseren van de details die op gevorderd niveau het verschil maken.
+
+</p>
+
+</details>
+
+
+</section>
+
+
+
+
+
+<section class="final" id="contact">
+
+
+<div class="container">
+
+
+<h2>
+
+Je hebt al jaren geïnvesteerd in je fysiek.
+
+</h2>
+
+
+<p>
+
+Ontdek welke details jouw volgende niveau bepalen.
+
+</p>
+
+
+<a class="btn" href="#">
+
+Plan jouw gratis intake
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+Harder Coaching
+
+</footer>
+
+
+
+</body>
+
+</html>
