@@ -5,6 +5,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Je traint al jaren serieus. Harder Coaching helpt gevorderde lifters en natural bodybuilders de puntjes op de i te zetten met een datagedreven plan voor training, voeding, herstel en presentatie.">
 
 <title>Harder Coaching | Van goed fysiek naar buitengewoon fysiek</title>
 
@@ -139,6 +140,14 @@ p {
 .btn:hover {
 
     background:var(--red-hover);
+
+}
+
+
+.btn:focus-visible {
+
+    outline:3px solid var(--red);
+    outline-offset:3px;
 
 }
 
@@ -322,7 +331,16 @@ p {
 /* TESTIMONIAL */
 
 
-.testimonial {
+.testimonial-wrap {
+
+    max-width:540px;
+
+    margin:0 auto;
+
+}
+
+
+.testimonial-card {
 
     background:var(--dark-card);
 
@@ -332,19 +350,31 @@ p {
 
     color:white;
 
+    text-align:center;
+
 }
 
 
-.testimonial h3 {
+.testimonial-card h3 {
 
     color:white;
 
 }
 
 
-.testimonial p {
+.testimonial-card p {
 
     color:#dddddd;
+
+}
+
+
+.testimonial-card iframe,
+.testimonial-card blockquote {
+
+    width:100% !important;
+
+    margin:20px 0 !important;
 
 }
 
@@ -400,10 +430,48 @@ p {
 }
 
 
+.price-sub {
+
+    font-size:14px;
+
+    color:var(--gray);
+
+    margin-top:-15px;
+
+}
+
 
 .dark .price {
 
     color:white;
+
+}
+
+
+.dark .price-sub {
+
+    color:#bbbbbb;
+
+}
+
+
+.badge {
+
+    display:inline-block;
+
+    background:var(--red);
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    margin-bottom:12px;
 
 }
 
@@ -487,6 +555,22 @@ summary {
 }
 
 
+.final .btn:focus-visible {
+
+    outline:3px solid white;
+
+}
+
+
+.final .subtext {
+
+    font-size:14px;
+    color:#ffdddd;
+    margin-top:12px;
+
+}
+
+
 
 
 
@@ -502,6 +586,13 @@ footer {
     text-align:center;
 
     padding:40px;
+
+}
+
+
+footer a {
+
+    color:#dddddd;
 
 }
 
@@ -699,16 +790,14 @@ Je doet alles goed. Toch voelt het alsof er meer in zit.
 
 <p>
 
-Je traint al jaren serieus. Je hebt discipline, houdt je voeding bij en hebt al een sterk fysiek opgebouwd.
+Je traint al jaren serieus. Je hebt discipline, houdt je voeding bij en hebt al een sterk fysiek opgebouwd. Maar zonder duidelijk plan weet je niet altijd wat je met al die informatie moet doen.
 
 </p>
 
 
 <p>
 
-Maar de laatste stap vraagt meer dan motivatie.
-
-Het vraagt om de juiste techniek, de juiste timing en iemand die weet welke knop wanneer moet worden aangepast.
+De laatste stap vraagt meer dan motivatie. Het vraagt om de juiste techniek, de juiste timing en iemand die weet welke knop wanneer moet worden aangepast.
 
 </p>
 
@@ -751,7 +840,7 @@ Techniek optimalisatie
 
 <p>
 
-Video analyses om iedere oefening efficiënter uit te voeren.
+Wekelijkse video-analyses zodat iedere oefening de doelspier maximaal belast, in plaats van dat je alleen gewicht verplaatst.
 
 </p>
 
@@ -769,7 +858,7 @@ Persoonlijke strategie
 
 <p>
 
-Een roadmap voor jouw groeifase, cut of wedstrijdvoorbereiding.
+Een duidelijke roadmap voor jouw groeifase, cutfase of wedstrijdvoorbereiding, zodat je altijd weet welke fase je in zit.
 
 </p>
 
@@ -787,7 +876,7 @@ Data & feedback
 
 <p>
 
-Training, voeding en herstel gebruiken om betere beslissingen te maken.
+Training, voeding en herstel (inclusief wearable-data zoals HRV en rusthartslag) gebruiken om objectief bij te sturen.
 
 </p>
 
@@ -813,7 +902,7 @@ Training, voeding en herstel gebruiken om betere beslissingen te maken.
 
 <h2>
 
-Resultaten van cliënten
+Resultaat van een cliënt
 
 </h2>
 
@@ -821,56 +910,19 @@ Resultaten van cliënten
 
 
 
-<div class="grid">
+<div class="testimonial-wrap">
 
+<div class="testimonial-card">
 
-<div class="testimonial">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaFrdI3jfjR/" data-instgrm-version="14"></blockquote>
 
-<h3>
+<a class="btn" href="https://www.instagram.com/p/DaFrdI3jfjR/?img_index=1" target="_blank" rel="noopener">
 
-Cliënt resultaat
-
-</h3>
-
-<p>
-
-Voeg hier jouw Instagram testimonial toe.
-
-</p>
-
-<a class="btn" href="#">
-
-Bekijk Instagram
+Bekijk op Instagram
 
 </a>
 
 </div>
-
-
-
-<div class="testimonial">
-
-<h3>
-
-Cliënt resultaat
-
-</h3>
-
-<p>
-
-Voeg hier jouw Instagram testimonial toe.
-
-</p>
-
-<a class="btn" href="#">
-
-Bekijk Instagram
-
-</a>
-
-</div>
-
-
 
 </div>
 
@@ -879,6 +931,9 @@ Bekijk Instagram
 
 
 </section>
+
+
+<script async src="https://www.instagram.com/embed.js"></script>
 
 
 
@@ -914,13 +969,13 @@ Zonder plan
 
 <ul>
 
-<li>Je maakt keuzes op gevoel</li>
+<li>Je maakt keuzes op gevoel of social media trends</li>
 
-<li>Je wisselt vaak van aanpak</li>
+<li>Je wisselt vaak van aanpak en blijft nooit lang genoeg in één fase</li>
 
-<li>Je weet niet wanneer je moet aanpassen</li>
+<li>Je weet niet exact wanneer je moet bijsturen</li>
 
-<li>Je fysiek komt niet maximaal naar voren</li>
+<li>Je fysiek komt niet maximaal naar voren op foto's of podium</li>
 
 </ul>
 
@@ -941,13 +996,13 @@ Met Harder Coaching
 
 <ul>
 
-<li>Elke keuze heeft een reden</li>
+<li>Elke keuze is gebaseerd op data, ervaring en feedback</li>
 
-<li>Je volgt een duidelijke roadmap</li>
+<li>Je volgt een duidelijke roadmap: growth, diet/prep en peak</li>
 
-<li>Je krijgt objectieve feedback</li>
+<li>Je weet precies wanneer en waarom we bijsturen</li>
 
-<li>Je haalt meer uit je fysiek</li>
+<li>Je leert je fysiek presenteren via poseercoaching</li>
 
 </ul>
 
@@ -982,9 +1037,7 @@ Persoonlijke coaching
 
 <p>
 
-Geen standaard schema. Geen algemene adviezen.
-
-Een plan afgestemd op jouw niveau en doel.
+Geen standaard schema. Geen algemene adviezen. Een plan afgestemd op jouw niveau en doel.
 
 </p>
 
@@ -1012,6 +1065,8 @@ Wekelijkse coaching
 
 </div>
 
+<p class="price-sub">of €1.399,- eenmalig voor 6 maanden</p>
+
 
 <ul>
 
@@ -1026,7 +1081,7 @@ Wekelijkse coaching
 </ul>
 
 
-<a class="btn" href="#contact">
+<a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener">
 
 Start intake
 
@@ -1054,6 +1109,8 @@ Tweewekelijkse coaching
 
 </div>
 
+<p class="price-sub">of €979,- eenmalig voor 6 maanden</p>
+
 
 <ul>
 
@@ -1068,7 +1125,7 @@ Tweewekelijkse coaching
 </ul>
 
 
-<a class="btn" href="#contact">
+<a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener">
 
 Bekijk mogelijkheden
 
@@ -1079,6 +1136,8 @@ Bekijk mogelijkheden
 
 
 </div>
+
+<p class="center" style="color:#bbbbbb; font-size:14px; margin-top:10px;">Tweewekelijkse coaching is niet mogelijk tijdens wedstrijdprep.</p>
 
 
 </div>
@@ -1195,7 +1254,7 @@ Voor wie is Harder Coaching?
 
 <p>
 
-Voor serieuze lifters, natural bodybuilders en sporters met een duidelijk fysiek doel.
+Voor serieuze lifters, natural bodybuilders en sporters met een duidelijk fysiek doel die al 2-3 jaar consistent trainen en de basis onder de knie hebben.
 
 </p>
 
@@ -1231,7 +1290,24 @@ Wat maakt dit anders?
 
 <p>
 
-De focus ligt op het optimaliseren van de details die op gevorderd niveau het verschil maken.
+De focus ligt op het optimaliseren van de details die op gevorderd niveau het verschil maken: techniek, timing van aanpassingen en presentatie, in plaats van een standaard schema.
+
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+
+Hoe werkt de check-in?
+
+</summary>
+
+<p>
+
+Je deelt wekelijks (of tweewekelijks) je trainings-, voedings- en herstelgegevens. Op basis daarvan krijg je concrete feedback en, waar nodig, een aanpassing van je plan.
 
 </p>
 
@@ -1264,11 +1340,13 @@ Ontdek welke details jouw volgende niveau bepalen.
 </p>
 
 
-<a class="btn" href="#">
+<a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener">
 
 Plan jouw gratis intake
 
 </a>
+
+<p class="subtext">30 minuten, vrijblijvend</p>
 
 
 </div>
