@@ -15,2151 +15,791 @@
 
 <style>
 
+/* ─── TOKENS ─────────────────────────────────────────── */
+
 :root {
+    --red:         #780000;
+    --red-hover:   #5a0000;
+    --red-light:   #D66B6B;
+    --red-bg:      rgba(120,0,0,.08);
 
-    --red:#780000;
-    --red-hover:#5a0000;
-    --red-highlight-light:#D66B6B;
+    --dark:        #111111;
+    --dark-card:   #1c1c1c;
 
-    --dark:#111111;
-    --dark-card:#1c1c1c;
+    --light:       #F2F2F2;
+    --white:       #ffffff;
 
-    --light:#F2F2F2;
-    --white:#ffffff;
+    --text:        #111111;
+    --gray:        #555555;
 
-    --text:#111111;
-    --gray:#555555;
+    --green:       #1b4332;
+    --green-mid:   #4caf7d;
+    --yellow:      #F0A92C;
 
-    --green-light:#6B9963;
-    --green:#4A6D3F;
-    --yellow:#F0A92C;
-
+    --radius:      15px;
+    --gap:         30px;
 }
 
+/* ─── RESET & BASE ───────────────────────────────────── */
 
-* {
-
-    box-sizing:border-box;
-
-}
-
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-
-    margin:0;
-
-    font-family:
-    Manrope,
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    font-weight:300;
-
-    background:var(--light);
-
-    color:var(--text);
-
-    line-height:1.7;
-
-}
-
-
-h1,h2,h3 {
-
-    font-family:Oswald, Arial, Helvetica, sans-serif;
-    font-weight:700;
-    line-height:1.2;
-
-}
-
-
-h1 {
-
-    font-size:60px;
-
-    text-transform:uppercase;
-    letter-spacing:.5px;
-
-}
-
-
-h2 {
-
-    font-size:42px;
-
-    text-transform:uppercase;
-    letter-spacing:.5px;
-
-}
-
-
-h3 {
-
-    font-size:25px;
-
-}
-
-
-p {
-
-    font-size:18px;
-
-    color:var(--gray);
-
-}
-
-.text-red {
-    color:var(--red);
-}
-
-.text-red-light {
-    color:var(--red-highlight-light);
-}
-
-.text-green {
-    color:var(--green);
-}
-
-.text-green-light {
-    color:var(--green-light);
-}
-
-.text-yellow {
-    color:var(--yellow);
-}
-
-.container {
-
-    max-width:1100px;
-
-    margin:auto;
-
-    padding:90px 25px;
-
-}
-
-
-
-.center {
-
-    text-align:center;
-
-}
-
-
-/* EYEBROW / TITLE BLOCK */
-
-
-.eyebrow {
-
-    display:block;
-
-    font-size:14px;
-
-    font-weight:800;
-
-    letter-spacing:2.5px;
-
-    text-transform:uppercase;
-
-    color:var(--red);
-
-    margin-bottom:14px;
-
-}
-
-
-.dark .eyebrow {
-
-    color:#ffffff;
-
-}
-
-
-.dash {
-
-    width:50px;
-
-    height:3px;
-
-    background:var(--red);
-
-    border:none;
-
-    margin:20px auto 0;
-
-}
-
-
-.title-block {
-
-    max-width:700px;
-
-    margin:0 auto 55px;
-
-}
-
-
-.title-block.left {
-
-    margin:0 0 30px;
-
-    text-align:left;
-
-}
-
-
-.title-block.left .dash {
-
-    margin:20px 0 0;
-
-}
-
-
-
-/* BUTTONS */
-
-
-.btn {
-
-    display:inline-block;
-
-    margin-top:25px;
-
-    padding:16px 35px;
-
-    background:var(--red);
-
-    color:white !important;
-
-    text-decoration:none;
-
-    border-radius:8px;
-
-    font-weight:bold;
-
-    transition:.2s;
-
-}
-
-
-.btn:hover {
-
-    background:var(--red-hover);
-
-}
-
-
-.btn:focus-visible {
-
-    outline:3px solid var(--red);
-    outline-offset:3px;
-
-}
-
-
-
-
-
-/* HERO */
-
-
-.hero {
-
-    min-height:90vh;
-
-    display:flex;
-
-    align-items:center;
-
-    color:white;
-
-    background:
-
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.8) 0%,
-        rgba(0,0,0,.5) 38%,
-        rgba(0,0,0,0) 68%
-    ),
-
-    url("images/hero.png");
-
-
-    background-size:cover;
-
-    background-position:center;
-
-}
-
-
-
-.hero-content {
-
-    max-width:900px;
-
-    text-align:left;
-
-}
-
-.hero-content .btn {
-    
-    display:block;
-    
-    width:max-content;
-    
-    margin:25px auto 0;
-}
-
-.hero-content .eyebrow {
-
-    color:#ffffff;
-
-}
-
-
-.hero h1 {
-
-    color:white;
-
-}
-
-
-.hero p {
-
-    color:white;
-
-    max-width:none;
-
-    margin:22px 0;
-
-}
-
-
-
-/* GRIDS */
-
-
-.grid {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-}
-
-
-.grid-small {
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(230px,1fr));
-
-    gap:20px;
-
-}
-
-
-
-/* CARDS */
-
-
-.card {
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:15px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
-
-}
-
-
-.card p {
-
-    color:var(--gray);
-
-}
-
-
-
-.accent {
-
-    border-top:5px solid var(--red);
-
-}
-
-
-.card-small {
-
-    padding:24px;
-
-}
-
-
-.card-small h3 {
-
-    font-size:17px;
-    margin-bottom:8px;
-
-}
-
-
-.card-small p {
-
-    font-size:14.5px;
-
-}
-
-
-
-
-
-/* DARK SECTIONS */
-
-
-.dark {
-
-    background:var(--dark);
-
-    color:white;
-
-}
-
-
-.dark h2,
-.dark h3 {
-
-    color:white;
-
-}
-
-
-.dark p {
-
-    color:#dddddd;
-
-}
-
-
-
-.dark .card {
-
-    background:var(--dark-card);
-
-    color:white;
-
-}
-
-
-.dark .card h3 {
-
-    color:white;
-
-}
-
-
-.dark .card p {
-
-    color:#dddddd;
-
-}
-
-
-.dark li {
-
-    color:#eeeeee;
-
-}
-
-
-
-
-
-/* TESTIMONIAL */
-
-
-.testimonial-wrap {
-
-    max-width:540px;
-
-    margin:0 auto;
-
-}
-
-
-.testimonial-card {
-
-    background:var(--dark-card);
-
-    padding:35px;
-
-    border-radius:15px;
-
-    color:white;
-
-    text-align:center;
-
-}
-
-
-.testimonial-card h3 {
-
-    color:white;
-
-}
-
-
-.testimonial-card p {
-
-    color:#dddddd;
-
-}
-
-
-.testimonial-card iframe,
-.testimonial-card blockquote {
-
-    width:100% !important;
-
-    margin:20px 0 !important;
-
-}
-
-
-
-
-
-/* COMPARISON */
-
-
-.compare {
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:30px;
-
-}
-
-
-
-.problem {
-
-    border-left:
-    5px solid var(--red);
-
-}
-
-
-.solution {
-
-    border-left:
-    5px solid #1b4332;
-
-}
-
-
-
-/* SPLIT (verlangen + foto) */
-
-
-.split {
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:60px;
-
-    align-items:center;
-
-}
-
-
-.split img {
-
-    width:100%;
-
-    border-radius:15px;
-
-    display:block;
-
-}
-
-
-.desire-list {
-
-    list-style:none;
-
-    padding:0;
-
-    margin:0;
-
-}
-
-
-.desire-list li {
-
-    position:relative;
-
-    padding-left:30px;
-
-    margin-bottom:16px;
-
-    font-size:17px;
-
-    color:var(--gray);
-
-}
-
-
-.dark .desire-list li {
-
-    color:#dddddd;
-
-}
-
-
-.desire-list li::before {
-
-    content:"✓";
-
-    position:absolute;
-
-    left:0;
-
-    top:0;
-
-    color:var(--red);
-
-    font-weight:bold;
-
-}
-
-
-.dark .desire-list li::before {
-
-    color:#ff6666;
-
-}
-
-
-
-/* PRICING */
-
-
-.price-card {
-
-    text-align:center;
-
-}
-
-
-.price {
-
-    font-size:38px;
-
-    font-weight:bold;
-
-    color:var(--red);
-
-}
-
-
-.price span {
-
-    font-size:16px;
-
-    font-weight:normal;
-
-    color:var(--gray);
-
-}
-
-
-.price-sub {
-
-    font-size:14px;
-
-    color:var(--gray);
-
-    margin-top:8px;
-
-}
-
-
-.badge {
-
-    display:inline-block;
-
-    background:var(--red);
-
-    color:white;
-
-    font-size:13px;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
-
-    text-transform:uppercase;
-
-    padding:6px 14px;
-
-    border-radius:20px;
-
-    margin-bottom:18px;
-
-}
-
-
-.feature-card {
-
-    margin-top:30px;
-
-}
-
-
-.feature-card h3 {
-
-    margin-top:0;
-
-}
-
-
-.check-list {
-
-    list-style:none;
-
-    padding:0;
-
-    margin:20px 0 10px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:14px;
-
-}
-
-
-.check-list li {
-
-    position:relative;
-
-    padding-left:28px;
-
-    color:var(--gray);
-
-    font-size:16px;
-
-}
-
-
-.dark .check-list li {
-
-    color:#dddddd;
-
-}
-
-
-.check-list li::before {
-
-    content:"✓";
-
-    position:absolute;
-
-    left:0;
-
-    color:var(--red);
-
-    font-weight:bold;
-
-}
-
-
-.feature-note {
-
-    font-size:14px;
-
-    color:var(--gray);
-
-    margin-top:15px;
-
-}
-
-
-.dark .feature-note {
-
-    color:#bbbbbb;
-
-}
-
-
-
-/* SOLUTION LIST (Hoe ik dat oplos) */
-
-
-.solution-list {
-
-    list-style:none;
-
-    padding:0;
-
-    margin:0;
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:16px 40px;
-
-}
-
-
-.solution-list li {
-
-    position:relative;
-
-    padding-left:28px;
-
-    font-size:15px;
-
-    color:var(--gray);
-
-}
-
-
-.dark .solution-list li {
-
-    color:#dddddd;
-
-}
-
-
-.solution-list li::before {
-
-    content:"✓";
-
-    position:absolute;
-
-    left:0;
-
-    top:1px;
-
-    color:var(--red);
-
-    font-weight:bold;
-
-}
-
-
-.dark .solution-list li::before {
-
-    color:#ff6666;
-
-}
-
-
-.solution-list li strong {
-
-    display:block;
-
-    font-size:16px;
-
-    color:var(--text);
-
-    margin-bottom:2px;
-
-}
-
-
-.dark .solution-list li strong {
-
-    color:white;
-
-}
-
-
-/* ABOUT PHOTOS */
-
-
-.about-split {
-
-    display:grid;
-
-    grid-template-columns:1fr 1.1fr;
-
-    gap:70px;
-
-    align-items:start;
-
-    margin-bottom:70px;
-
-}
-
-
-.photo-sticky {
-
-    position:sticky;
-
-    top:110px;
-
-    align-self:start;
-
-}
-
-
-.photo-dash {
-
-    width:60px;
-    height:4px;
-    background:var(--red);
-
-    margin:0 auto 20px;
-
-}
-
-.photo-dash.bottom {
-
-    margin:20px auto 0;
-
-}
-
-
-.photo-duo {
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:0;
-
-}
-
-
-.photo-duo img {
-
-    width:100%;
-
-    height:clamp(320px,34vw,460px);
-
-    object-fit:cover;
-
-    border-radius:15px;
-
-    display:block;
-
-}
-
-
-.photo-duo .offset {
-
-    margin-top:50px;
-
-    margin-left:-26px;
-
-}
-
-
-.about-split .dash {
-
-    margin:0 0 20px auto;
-
-}
-
-
-/* VIDEO EMBEDS */
-
-
-.video-block iframe {
-
-    width:100%;
-
-    aspect-ratio:16/9;
-
-    border-radius:15px;
-
-    border:none;
-
-    display:block;
-
-}
-
-
-.video-block h3 {
-
-    margin-bottom:14px;
-
-}
-
-
-/* QUALIFY LIST (Ik werk niet met iedereen) */
-
-
-.yes-list,
-.no-list {
-
-    list-style:none;
-
-    padding:0;
-
-    margin:0;
-
-}
-
-
-.yes-list li,
-.no-list li {
-
-    position:relative;
-
-    padding-left:32px;
-
-    margin-bottom:16px;
-
-    font-size:16px;
-
-}
-
-
-.yes-list li::before {
-
-    content:"✓";
-
-    position:absolute;
-
-    left:0;
-
-    top:0;
-
-    color:#1b4332;
-
-    font-weight:bold;
-
-    font-size:18px;
-
-}
-
-
-.dark .yes-list li::before {
-
-    color:#4caf7d;
-
-}
-
-
-.no-list li::before {
-
-    content:"✕";
-
-    position:absolute;
-
-    left:0;
-
-    top:0;
-
-    color:var(--red);
-
-    font-weight:bold;
-
-    font-size:16px;
-
-}
-
-
-/* FAQ */
-
-
-details {
-
-    background:white;
-
-    padding:22px;
-
-    margin-bottom:15px;
-
-    border-radius:10px;
-
-    box-shadow:
-    0 5px 20px rgba(0,0,0,.05);
-
-}
-
-
-summary {
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-}
-
-
-
-
-
-/* FINAL CTA */
-
-
-.final {
-
-    background:var(--red);
-
-    color:white;
-
-    text-align:center;
-
-}
-
-
-.final h2 {
-
-    color:white;
-
-}
-
-
-.final p {
-
-    color:white;
-
-}
-
-
-
-.final .btn {
-
-    background:white;
-
-    color:var(--red) !important;
-
-}
-
-
-.final .btn:hover {
-
-    background:#eeeeee;
-
-}
-
-
-.final .btn:focus-visible {
-
-    outline:3px solid white;
-
-}
-
-
-.final .subtext {
-
-    font-size:14px;
-    color:#ffdddd;
-    margin-top:12px;
-
-}
-
-
-
-
-
-/* FOOTER */
-
-
-footer {
-
-    background:#080808;
-
-    color:white;
-
-    text-align:center;
-
-    padding:40px;
-
-}
-
-
-footer a {
-
-    color:#dddddd;
-
-}
-
-
-
-
-
-@media(max-width:700px){
-
-
-h1 {
-
-    font-size:38px;
-
-}
-
-
-h2 {
-
-    font-size:30px;
-
-}
-
-
-.compare {
-
-    grid-template-columns:1fr;
-
-}
-
-
-.split {
-
-    grid-template-columns:1fr;
-
-    gap:35px;
-
-    text-align:center;
-
-}
-
-
-.split img {
-
-    order:-1;
-
-    max-width:340px;
-
-    margin:0 auto;
-
-}
-
-
-.desire-list li {
-
-    text-align:left;
-
-}
-
-
-.title-block.left {
-
-    text-align:center;
-
-}
-
-
-.title-block.left .dash {
-
-    margin:20px auto 0;
-
-}
-
-
-.hero {
-
-    background:
-
-    linear-gradient(
-        rgba(0,0,0,.65),
-        rgba(0,0,0,.85)
-    ),
-
-    url("images/hero.png");
-
-    background-size:cover;
-
-    background-position:center;
-
-}
-
-
-.hero-content {
-
-    text-align:center;
-
-    margin:0 auto;
-
-}
-
-
-.hero p {
-
-    margin-left:auto;
-    margin-right:auto;
-
-}
-
-
-.about-split {
-
-    grid-template-columns:1fr;
-
-    gap:35px;
-
-}
-
-
-.photo-sticky {
-
-    position:static;
-
-}
-
-
-.photo-duo .offset {
-
-    margin-top:0;
-
-    margin-left:0;
-
-}
-
-
-.about-split .dash {
-
-    margin:0 auto 20px;
-
-}
-
-/* PROBLEM LIST */
-
-.problem-list {
-
-    list-style: none;
-    padding: 0;
-    margin: 25px 0;
-
-}
-
-.problem-list li {
-
-    position: relative;
-    padding-left: 32px;
-    margin-bottom: 16px;
-
+    margin: 0;
     font-family: Manrope, Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 18px;
-    color:inherit;
-
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--light);
 }
 
-.problem-list li::before {
+h1, h2, h3 {
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
 
+h1 { font-size: 60px; text-transform: uppercase; letter-spacing: .5px; }
+h2 { font-size: 42px; text-transform: uppercase; letter-spacing: .5px; }
+h3 { font-size: 22px; }
+
+p { font-size: 18px; color: var(--gray); }
+
+a { color: inherit; }
+
+/* ─── UTILITY ────────────────────────────────────────── */
+
+.container { max-width: 1100px; margin: auto; padding: 90px 25px; }
+.center    { text-align: center; }
+
+.text-red    { color: var(--red); }
+.text-rl     { color: var(--red-light); }
+.text-yellow { color: var(--yellow); }
+
+/* ─── EYEBROW / TITLE BLOCK ──────────────────────────── */
+
+.eyebrow {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+}
+.dark .eyebrow { color: #fff; }
+
+.dash {
+    width: 50px; height: 3px;
+    background: var(--red);
+    border: none;
+    margin: 18px auto 0;
+}
+
+.title-block          { max-width: 700px; margin: 0 auto 50px; }
+.title-block.left     { margin: 0 0 28px; text-align: left; }
+.title-block.left .dash { margin: 18px 0 0; }
+
+/* ─── BUTTONS ────────────────────────────────────────── */
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 16px 35px;
+    background: var(--red);
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background .2s;
+}
+.btn:hover          { background: var(--red-hover); }
+.btn:focus-visible  { outline: 3px solid var(--red); outline-offset: 3px; }
+
+/* ─── DARK SECTION ───────────────────────────────────── */
+
+.dark                { background: var(--dark); color: #fff; }
+.dark h2, .dark h3   { color: #fff; }
+.dark p              { color: #ddd; }
+.dark li             { color: #eee; }
+
+/* ─── HERO ───────────────────────────────────────────── */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background:
+        linear-gradient(90deg,
+            rgba(0,0,0,.82) 0%,
+            rgba(0,0,0,.52) 40%,
+            rgba(0,0,0,0)   68%),
+        url("images/hero.png") center/cover;
+}
+.hero-content { max-width: 860px; text-align: left; }
+.hero h1      { color: #fff; }
+.hero p       { color: #fff; margin: 20px 0; }
+
+/* ─── GRID ───────────────────────────────────────────── */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap);
+}
+
+/* ─── CARD ───────────────────────────────────────────── */
+
+.card {
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 28px rgba(0,0,0,.08);
+}
+.dark .card         { background: var(--dark-card); }
+.dark .card h3      { color: #fff; }
+.dark .card p       { color: #ddd; }
+
+/* ─── PROBLEM LIST ───────────────────────────────────── */
+
+.problem-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+}
+.problem-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 14px;
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--gray);
+}
+.problem-list li::before {
     content: "✓";
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 0; top: 0;
     color: var(--red);
-    font-weight: bold;
-
+    font-weight: 700;
 }
 
-.dark .problem-list li {
+/* ─── SOLUTION LIST (aanpak) ─────────────────────────── */
 
-    color: #dddddd;
-
+.solution-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px 40px;
 }
-    
+.solution-list li {
+    position: relative;
+    padding-left: 26px;
+    font-size: 15px;
+    color: #ddd;
+}
+.solution-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: 1px;
+    color: var(--red-light);
+    font-weight: 700;
+}
+.solution-list li strong {
+    display: block;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 1px;
 }
 
+/* ─── TESTIMONIAL ────────────────────────────────────── */
 
+.testimonial-wrap { max-width: 540px; margin: 0 auto; }
+.testimonial-card {
+    background: var(--dark-card);
+    padding: 35px;
+    border-radius: var(--radius);
+    text-align: center;
+    color: #fff;
+}
+.testimonial-card h3  { color: #fff; }
+.testimonial-card p   { color: #ddd; }
+.testimonial-card iframe,
+.testimonial-card blockquote { width: 100% !important; margin: 20px 0 !important; }
+
+/* ─── VERSCHIL — linked rows layout ─────────────────── */
+
+.verschil-wrap {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    align-items: start;
+}
+.verschil-title-col { padding-top: 8px; }
+
+.verschil-rows { display: flex; flex-direction: column; gap: 0; }
+
+.verschil-header-row {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 0;
+    margin-bottom: 8px;
+}
+.verschil-header-row .col-head {
+    padding: 12px 18px;
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    border-radius: 8px 8px 0 0;
+}
+.col-head.bad  { background: var(--red);   color: #fff; }
+.col-head.good { background: var(--green); color: #fff; }
+.verschil-header-row .arrow-head { /* spacer */ }
+
+.verschil-row {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.verschil-row:last-child { border-bottom: none; }
+
+.verschil-cell {
+    padding: 16px 18px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+}
+.verschil-cell.bad  { background: rgba(120,0,0,.18); color: #eee; }
+.verschil-cell.good { background: rgba(27,67,50,.25); color: #eee; }
+
+.verschil-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-card);
+    color: #888;
+    font-size: 18px;
+}
+
+/* ─── QUALIFY (was fit check) ────────────────────────── */
+
+.compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+}
+.card-yes { border-top: 5px solid var(--green); }
+.card-no  { border-top: 5px solid var(--red);   }
+
+.yes-list, .no-list { list-style: none; padding: 0; margin: 0; }
+.yes-list li, .no-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 14px;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--gray);
+}
+.yes-list li::before {
+    content: "✓";
+    position: absolute; left: 0; top: 0;
+    color: var(--green);
+    font-weight: 700; font-size: 17px;
+}
+.no-list li::before {
+    content: "✕";
+    position: absolute; left: 0; top: 0;
+    color: var(--red);
+    font-weight: 700; font-size: 15px;
+}
+.card-yes h3 { color: var(--green); }
+.card-no  h3 { color: var(--red);   }
+
+/* ─── SPLIT (verlangen) ──────────────────────────────── */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.split img { width: 100%; border-radius: var(--radius); display: block; }
+
+.desire-list { list-style: none; padding: 0; margin: 0; }
+.desire-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 17px;
+    color: #ddd;
+}
+.desire-list li::before {
+    content: "✓";
+    position: absolute; left: 0; top: 0;
+    color: var(--red-light);
+    font-weight: 700;
+}
+
+/* ─── PRICING ────────────────────────────────────────── */
+
+.price-card { text-align: center; }
+.price { font-size: 38px; font-weight: 700; color: var(--red); }
+.price span { font-size: 16px; font-weight: 300; color: var(--gray); }
+.price-sub { font-size: 14px; color: var(--gray); margin-top: 6px; }
+
+.badge {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.feature-card { margin-top: 28px; }
+.feature-card h3 { margin-top: 0; }
+
+.check-list { list-style: none; padding: 0; margin: 18px 0 10px; display: flex; flex-direction: column; gap: 12px; }
+.check-list li { position: relative; padding-left: 26px; font-size: 16px; color: var(--gray); }
+.check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+.feature-note { font-size: 14px; color: var(--gray); margin-top: 14px; }
+
+/* ─── ABOUT ──────────────────────────────────────────── */
+
+.about-split {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 70px;
+    align-items: start;
+    margin-bottom: 70px;
+}
+.photo-sticky { position: sticky; top: 100px; align-self: start; }
+
+.photo-dash { width: 60px; height: 4px; background: var(--red); margin: 0 auto 18px; }
+.photo-dash.bottom { margin: 18px auto 0; }
+
+.photo-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.photo-duo img {
+    width: 100%;
+    height: clamp(330px, 34vw, 470px);
+    object-fit: cover;
+    border-radius: var(--radius);
+    display: block;
+}
+.photo-duo .offset { margin-top: 50px; margin-left: -24px; }
+
+/* ─── VIDEO ──────────────────────────────────────────── */
+
+.video-block h3 { margin-bottom: 12px; }
+.video-block iframe {
+    width: 100%; aspect-ratio: 16/9;
+    border-radius: var(--radius); border: none; display: block;
+}
+
+/* ─── FAQ ────────────────────────────────────────────── */
+
+details {
+    background: #fff;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.05);
+}
+summary { cursor: pointer; font-weight: 600; }
+
+/* ─── FINAL CTA ──────────────────────────────────────── */
+
+.final { background: var(--red); text-align: center; }
+.final h2, .final p  { color: #fff; }
+.final .btn          { background: #fff; color: var(--red) !important; }
+.final .btn:hover    { background: #eee; }
+.final .btn:focus-visible { outline: 3px solid #fff; }
+.final .subtext      { font-size: 14px; color: #ffdddd; margin-top: 10px; }
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+
+footer { background: #080808; color: #fff; text-align: center; padding: 40px; }
+footer a { color: #ccc; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+
+@media (max-width: 700px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+
+    .hero {
+        background:
+            linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.85)),
+            url("images/hero.png") center/cover;
+    }
+    .hero-content { text-align: center; margin: 0 auto; }
+    .hero p { margin-left: auto; margin-right: auto; }
+
+    .compare,
+    .split        { grid-template-columns: 1fr; gap: 24px; }
+    .split img    { order: -1; max-width: 340px; margin: 0 auto; }
+    .desire-list li { text-align: left; }
+    .title-block.left { text-align: center; }
+    .title-block.left .dash { margin: 18px auto 0; }
+
+    .verschil-wrap { grid-template-columns: 1fr; gap: 28px; }
+    .verschil-row,
+    .verschil-header-row { grid-template-columns: 1fr; }
+    .verschil-arrow { display: none; }
+    .verschil-cell.bad   { border-radius: 0; }
+    .verschil-cell.good  { border-radius: 0; }
+
+    .about-split  { grid-template-columns: 1fr; gap: 32px; }
+    .photo-sticky { position: static; }
+    .photo-duo .offset { margin-top: 0; margin-left: 0; }
+}
 
 </style>
-
 </head>
-
-
 
 <body>
 
-
-
+<!-- ═══ HERO ══════════════════════════════════════════ -->
 <section class="hero">
-
 <div class="container">
-
 <div class="hero-content">
 
+<h1>Je traint al jaren serieus. Ik help je de <span class="text-rl">puntjes op de i</span> te zetten.</h1>
 
-<h1>
+<p>Je mist geen trainingen, je let op je voeding en je hebt een goed fysiek opgebouwd. Maar op jouw niveau zit de grootste winst niet meer in harder werken.</p>
 
-Je traint al jaren serieus. Ik help je de <span class="text-red-light">puntjes op de İ</span> te zetten.
+<p>Ik help serieuze lifters en natural bodybuilders die een goed fysiek hebben gebouwd om de puntjes op de i te zetten. Door training, voeding, herstel en poseren te verbeteren op basis van data, feedback en ervaring.</p>
 
-</h1>
-
-
-<p>
-
-Je mist geen trainingen, je let op je voeding en je hebt een goed fysiek opgebouwd.
-
-Maar op jouw niveau zit de grootste winst niet meer in harder werken.
-
-</p>
-
-
-<p>
-
-Ik help serieuze lifters en natural bodybuilders die een goed fysiek hebben gebouwd om de puntjes op de i te zetten. Door training, voeding, herstel en poseren te verbeteren op basis van data, feedback en ervaring.
-
-</p>
-
-
-
-<a class="btn" href="#contact">
-
-Bekijk of coaching bij jou past
-
-</a>
-
+<a class="btn" href="#contact">Bekijk of coaching bij jou past</a>
 
 </div>
-
 </div>
-
 </section>
 
+<!-- ═══ PROBLEEM ═══════════════════════════════════════ -->
 <section class="container">
 
-
 <div class="title-block center">
-
 <span class="eyebrow">Het probleem</span>
-
-<h2>
-
-Je doet alles goed. Toch voelt het alsof er meer in zit.
-
-</h2>
-
+<h2>Je doet alles goed, toch voelt het alsof er meer in zit</h2>
 <div class="dash"></div>
-
 </div>
 
-
-<p>
-
-Je hebt de basis onder controle. Je traint serieus, let op je voeding en doet wat nodig is. Maar op jouw niveau maken juist de details het verschil. Herken je dit?
-
-</p>
-
+<p>Je hebt de basis onder controle. Je traint serieus, let op je voeding en doet wat nodig is. Maar op jouw niveau maken juist de details het verschil. Herken je dit?</p>
 
 <ul class="problem-list">
-
-<li>
-Je weet niet altijd wanneer je training, voeding of cardio moet aanpassen om verder te groeien.
-</li>
-
-<li>
-Je maakt keuzes op gevoel of basis van wat je online ziet, zonder duidelijk plan.
-</li>
-
-<li>
-Je techniek, intensiteit en fysieke presentatie houden je nog tegen om je maximale potentieel te bereiken.
-</li>
-
-<li>
-Je mist objectieve feedback om precies te weten welke knop je wanneer moet omdraaien.
-</li>
-
+<li>Je weet niet altijd wanneer je training, voeding of cardio moet aanpassen om verder te groeien.</li>
+<li>Je maakt keuzes op gevoel of op basis van wat je online ziet, zonder duidelijk plan.</li>
+<li>Je techniek, intensiteit en fysieke presentatie houden je nog tegen om je maximale potentieel te bereiken.</li>
+<li>Je mist objectieve feedback om precies te weten welke knop je wanneer moet omdraaien.</li>
 </ul>
 
-
-<p>
-
-Daar maken we het verschil. De juiste keuzes op het juiste moment.
-
-</p>
-
+<p>Daar maken we het verschil. De juiste keuzes op het juiste moment.</p>
 
 </section>
 
+<!-- ═══ AANPAK ═════════════════════════════════════════ -->
 <section class="dark">
-
-
 <div class="container">
 
-
 <div class="title-block center">
-
 <span class="eyebrow">De aanpak</span>
-
-<h2>
-
-Hoe ik dat oplos
-
-</h2>
-
+<h2>Zo los ik dat op</h2>
 <div class="dash"></div>
-
 </div>
-
-
 
 <ul class="solution-list">
-
 <li><strong>Persoonlijke begeleiding</strong>(Twee-)wekelijkse check-ins, doorlopend contact en uitgebreide feedback.</li>
-
 <li><strong>Duidelijke, gestructureerde timeline</strong>Weet precies in welke fase (groei, diet/prep of peak) je zit en hoe de overgangen gepland zijn.</li>
-
 <li><strong>Optimale uitvoering van je training</strong>Train met de juiste intensiteit en techniek door middel van wekelijkse video-analyses.</li>
-
 <li><strong>Optimalisatie van iedere fase</strong>Haal het maximale uit elke fase van je fysieke reis: groei, diet/prep en peak.</li>
-
 <li><strong>Geavanceerde datatracking</strong>Biometrische data (HRV, slaapkwaliteit, rusthartslag) en trainingsdata bijhouden, analyseren en gebruiken om bij te sturen.</li>
-
 <li><strong>Presenteren van je fysiek</strong>Je leert je fysiek presenteren, of dat nu voor een festival, fotoshoot of bodybuildwedstrijd is.</li>
-
 <li><strong>Vertrouwen in het proces</strong>Begrijp waarom elke keuze wordt gemaakt en geniet van de weg richting je doelen.</li>
-
 </ul>
 
-
 </div>
-
-
 </section>
 
-
-
-
-
+<!-- ═══ KLANTRESULTATEN ════════════════════════════════ -->
 <section class="container">
 
-
 <div class="title-block center">
-
 <span class="eyebrow">Resultaat</span>
-
-<h2>
-
-Dit ervaren mijn klanten
-
-</h2>
-
+<h2>Dit ervaren mijn klanten</h2>
 <div class="dash"></div>
-
 </div>
-
-
 
 <div class="testimonial-wrap">
-
 <div class="testimonial-card">
-
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaFrdI3jfjR/" data-instgrm-version="14"></blockquote>
-
-<a class="btn" href="https://www.instagram.com/p/DaFrdI3jfjR/?img_index=1" target="_blank" rel="noopener">
-
-Bekijk op Instagram
-
-</a>
-
+<a class="btn" href="https://www.instagram.com/p/DaFrdI3jfjR/?img_index=1" target="_blank" rel="noopener">Bekijk op Instagram</a>
 </div>
-
 </div>
-
 
 </section>
-
-
 <script async src="https://www.instagram.com/embed.js"></script>
 
-
-
-
-
+<!-- ═══ HET VERSCHIL ═══════════════════════════════════ -->
 <section class="dark">
-
-
 <div class="container">
 
+<div class="verschil-wrap">
 
-<div class="title-block center">
+  <div class="verschil-title-col">
+    <span class="eyebrow">Het verschil</span>
+    <h2>Zo ziet verandering eruit</h2>
+    <div class="dash" style="margin:18px 0 0;"></div>
+    <p style="margin-top:20px;">Elke situatie links is precies waar mijn klanten uitkomen. Rechts is waar ze naartoe gaan.</p>
+  </div>
 
-<span class="eyebrow">Het verschil</span>
+  <div class="verschil-rows">
 
-<h2>
+    <div class="verschil-header-row">
+      <div class="col-head bad">Zonder plan</div>
+      <div class="arrow-head"></div>
+      <div class="col-head good">Met Harder Coaching</div>
+    </div>
 
-Wat gebeurt er als je stopt met werken zonder plan.
+    <div class="verschil-row">
+      <div class="verschil-cell bad">Je traint hard, maar techniek en uitvoering wisselen onbewust per set</div>
+      <div class="verschil-arrow">→</div>
+      <div class="verschil-cell good">Je traint gecontroleerd zodat elke set maximale prikkel geeft aan de juiste spier</div>
+    </div>
 
-</h2>
+    <div class="verschil-row">
+      <div class="verschil-cell bad">Je neemt beslissingen op gevoel of op basis van wat je op social media ziet</div>
+      <div class="verschil-arrow">→</div>
+      <div class="verschil-cell good">Elke beslissing is gebaseerd op data, ervaring en jouw persoonlijke feedback</div>
+    </div>
 
-<div class="dash"></div>
+    <div class="verschil-row">
+      <div class="verschil-cell bad">Je hebt geen duidelijke planning en hoopt dat je uiteindelijk je doel bereikt</div>
+      <div class="verschil-arrow">→</div>
+      <div class="verschil-cell good">Je volgt een duidelijke timeline en weet altijd waar je staat en wat de volgende stap is</div>
+    </div>
 
+    <div class="verschil-row">
+      <div class="verschil-cell bad">Je weet niet wanneer je voeding, trainingsplan of cardio moet bijsturen als je vastloopt</div>
+      <div class="verschil-arrow">→</div>
+      <div class="verschil-cell good">Je weet precies wanneer en waarom we bijsturen om maximale progressie te blijven maken</div>
+    </div>
+
+    <div class="verschil-row">
+      <div class="verschil-cell bad">Je hebt een goed fysiek maar weet niet hoe je dit presenteert op camera of het podium</div>
+      <div class="verschil-arrow">→</div>
+      <div class="verschil-cell good">Je leert je fysiek groter en droger presenteren door poseercoaching</div>
+    </div>
+
+  </div>
 </div>
 
-
-
-<div class="compare">
-
-
-<div class="card problem">
-
-
-<h3>
-
-Zo pak je het nu aan
-
-</h3>
-
-
-<ul>
-
-<li>Je traint hard, maar techniek en uitvoering wisselen onbewust per set</li>
-
-<li>Je neemt beslissingen op gevoel of omdat je iets op social media hebt gezien</li>
-
-<li>Je hebt geen duidelijke planning en hoopt dat je uiteindelijk je doel bereikt</li>
-
-<li>Je weet niet exact wanneer je jouw voeding, trainingsplan of cardio moet bijsturen als je vastloopt</li>
-
-<li>Je hebt een goed fysiek, maar weet niet hoe je dit presenteert op camera of het podium</li>
-
-</ul>
-
-
 </div>
-
-
-
-<div class="card solution">
-
-
-<h3>
-
-Zo werkt het met Harder Coaching
-
-</h3>
-
-
-<ul>
-
-<li>Je traint hard en gecontroleerd, zodat elke set maximale prikkel geeft aan de juiste spier</li>
-
-<li>Elke beslissing is gebaseerd op data, ervaring en jouw persoonlijke feedback</li>
-
-<li>Je volgt een duidelijke timeline, zodat je altijd weet waar je staat en wat de volgende stap is</li>
-
-<li>Je weet precies wanneer en waarom we bijsturen om maximale progressie te blijven maken</li>
-
-<li>Je leert je fysiek groter en droger presenteren door poseercoaching</li>
-
-</ul>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
 </section>
 
-
-
-
-
+<!-- ═══ GESCHIKT VOOR JOU? ════════════════════════════ -->
 <section class="container">
 
-
 <div class="title-block center">
-
-<span class="eyebrow">Fit check</span>
-
-<h2>
-
-Ik werk niet met iedereen
-
-</h2>
-
+<span class="eyebrow">Geschikt voor jou?</span>
+<h2>Ik werk niet met iedereen</h2>
 <div class="dash"></div>
-
 </div>
-
-
 
 <div class="compare">
 
-
-<div class="card solution">
-
-
-<h3>
-
-Dit is voor jou als:
-
-</h3>
-
-
+<div class="card card-yes">
+<h3>Dit is voor jou als:</h3>
 <ul class="yes-list">
-
 <li>Je bent klaar om je training serieus aan te pakken met een coach en wilt zien wat er mogelijk is.</li>
-
 <li>Je wilt 3 tot 5 keer per week trainen en doet consistent wat nodig is, ook als je er even geen zin in hebt.</li>
-
 <li>Je bent eerlijk tegen jezelf en tegen mij over wat wel en niet goed gaat.</li>
-
 <li>Je ziet coaching als een investering in je toekomst, niet als iets vrijblijvends.</li>
-
 </ul>
-
-
 </div>
 
-
-
-<div class="card problem">
-
-
-<h3>
-
-Dit is niet voor jou als:
-
-</h3>
-
-
+<div class="card card-no">
+<h3>Dit is niet voor jou als:</h3>
 <ul class="no-list">
-
 <li>Je bent net begonnen met trainen en hebt iemand nodig die je handje vasthoudt.</li>
-
 <li>Je praat jezelf regelmatig uit keuzes die je eigenlijk al weet dat je moet maken.</li>
-
 <li>Je verwacht resultaten zonder jezelf verantwoordelijk te houden voor het proces.</li>
-
 <li>Je wilt alleen bevestiging dat je 'goed bezig bent', zonder echt te veranderen.</li>
-
 </ul>
-
-
 </div>
 
-
 </div>
-
-
 </section>
 
-
-
-
-
+<!-- ═══ VERLANGEN / WAT JE KRIJGT ════════════════════ -->
 <section class="dark">
-
-
 <div class="container">
-
-
 <div class="split">
 
-
 <div>
-
 <div class="title-block left">
-
 <span class="eyebrow">Wat je nodig hebt</span>
-
 <h2>Zo ziet spiergroei eruit</h2>
-
 <div class="dash"></div>
-
 </div>
-
-
 <ul class="desire-list">
-
 <li>Een fysiek dat past bij jouw potentieel.</li>
-
 <li>Vertrouwen in je aanpak, omdat je weet waarom elke keuze wordt gemaakt.</li>
-
 <li>Elke herhaling met de juiste techniek: pijnvrije gewrichten en maximale spiergroei.</li>
-
 <li>Nooit meer twijfelen of je wel goed bezig bent.</li>
-
-<li>Je spieren 'blind' aansturen en presenteren, zodat je fysiek er altijd top uitziet.</li>
-
+<li>Je spieren blind aansturen en presenteren, zodat je fysiek er altijd top uitziet.</li>
 <li>Een coach die de details begrijpt die op jouw niveau het verschil maken.</li>
-
 </ul>
-
 </div>
-
 
 <img src="images/Verlangen.png" alt="Jerrel den Harder van Harder Coaching tijdens zijn fotoshoot bij Fox Gym in Rotterdam in augustus 2025">
 
-
 </div>
-
-
 </div>
-
-
 </section>
 
-
-
-
+<!-- ═══ PRICING ════════════════════════════════════════ -->
 <section class="container">
-
 
 <div class="title-block center">
-
 <span class="eyebrow">Investering</span>
-
-<h2>
-
-Coaching trajecten
-
-</h2>
-
+<h2>Dit is mijn aanbod</h2>
 <div class="dash"></div>
-
 <p>Evidence-based coaching gebaseerd op data, ervaring en jouw persoonlijke feedback. Twee opties, hetzelfde traject. Het enige verschil is hoe vaak we contact hebben.</p>
-
 </div>
-
-
 
 <div class="grid">
-
-
 <div class="card price-card">
-
 <div class="badge">Wekelijkse check-in</div>
-
 <div class="price">€279<span> / maand</span></div>
-
 <p class="price-sub">of €1.399,- eenmalig voor 6 maanden</p>
-
 </div>
-
-
-
 <div class="card price-card">
-
-<div class="badge">Tweewekelijks check-in</div>
-
+<div class="badge">Tweewekelijkse check-in</div>
 <div class="price">€199<span> / maand</span></div>
-
 <p class="price-sub">of €979,- eenmalig voor 6 maanden</p>
-
 </div>
-
-
 </div>
-
-
 
 <div class="card feature-card">
-
 <h3>Dit krijg je bij beide trajecten</h3>
-
 <ul class="check-list">
-
 <li>Persoonlijk trainingsplan</li>
-
 <li>Wekelijkse techniek-analyse</li>
-
 <li>Feedback op poseren</li>
-
-<li>Een heldere timeline incl. progressie tracking</li>
-    
+<li>Een heldere timeline inclusief progressie tracking</li>
 <li>Voedingsaanpak naar keuze: kant-en-klaar plan of zelf bijhouden op basis van principes</li>
-
 <li>Leefstijlbegeleiding (slaap, stress, herstel)</li>
-    
 </ul>
-
 <p class="feature-note">Het enige verschil: de accountability- en reflectiecall vindt wekelijks of tweewekelijks plaats. Tweewekelijkse coaching is niet mogelijk tijdens wedstrijdprep.</p>
-
 </div>
-
 
 <div class="center">
-
-<a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener">
-
-Start intake
-
-</a>
-
+<a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener">Start intake</a>
 </div>
-
 
 </section>
 
-
-
-
-
+<!-- ═══ OVER MIJ ═══════════════════════════════════════ -->
 <section class="container">
-
 
 <div class="about-split">
 
-
 <div>
-
 <span class="eyebrow">Over mij</span>
+<h2>Als jij <span class="text-red">maximaal resultaat</span> behaald ben ik <span class="text-red">tevreden</span></h2>
+<div class="dash" style="margin:20px 0 28px;"></div>
 
-<h2>
+<p>Ik kom uit de powerlifting. Daar was vooruitgang lekker simpel: meer gewicht op de stang. Toen ik overstapte naar bodybuilding, miste ik dat in het begin echt. Tot ik doorhad dat niet de sport het probleem was, maar mijn aanpak. Zodra ik dat omgooide, ging ik er helemaal voor: spieropbouw en posing. Dat heb ik nooit meer losgelaten.</p>
 
-Als jij <span class="text-red">maximaal resultaat</span> behaald ben ik <span class="text-red">tevreden</span>
+<p>Op een gegeven moment liep ik vast. Zelf video's kijken en dingen uitproberen bracht me niet meer verder. Dus ben ik coaching gaan volgen. Na het doen van de Henselmans PT Cursus en Jay Whey Muscle Camp heb ik zelf de knoop doorgehakt om ook mensen te gaan begeleiden. Ik zag simpelweg hoeveel verschil het maakt als iemand precies weet welke knop hij op welk moment moet omdraaien.</p>
 
-</h2>
+<p>Structuur is voor mij geen bijzaak, het is de basis waar alles op draait. Diezelfde discipline gebruik ik om naast mijn coaching ook <a href="https://datavance.nl" target="_blank" rel="noopener" class="text-yellow">Datavance</a>, mijn databedrijf, te runnen. Ik houd het aantal klanten bewust klein, zodat iedereen de aandacht krijgt die nodig is om echt vooruitgang te boeken.</p>
 
-<div class="dash" style="margin:20px 0 30px;"></div>
-
-
-<p>
-
-Ik kom uit de powerlifting. Daar was vooruitgang lekker simpel: meer gewicht op de stang. Toen ik overstapte naar bodybuilding, miste ik dat in het begin echt. Tot ik doorhad dat niet de sport het probleem was, maar mijn aanpak. Zodra ik dat omgooide, ging ik er helemaal voor: spieropbouw en posing. Dat heb ik nooit meer losgelaten.
-
-</p>
-
-<p>
-
-Op een gegeven moment liep ik vast. Zelf video's kijken en dingen uitproberen bracht me niet meer verder. Dus ben ik coaching gaan volgen. Na het doen van de Henselmans PT Cursus en Jay Whey Muscle Camp heb ik zelf de knoop doorgehakt om ook mensen te gaan begeleiden. Ik zag simpelweg hoeveel verschil het maakt als iemand precies weet welke knop hij op welk moment moet omdraaien.
-
-</p>
-
-<p>
-
-Structuur is voor mij geen bijzaak, het is de basis waar alles op draait. Diezelfde discipline gebruik ik om naast mijn coaching ook <a href="https://datavance.nl" target="_blank" rel="noopener" class="text-yellow">Datavance</a>, mijn databedrijf, te runnen. Ik houd het aantal klanten bewust klein, zodat iedereen de aandacht krijgt die nodig is om echt vooruitgang te boeken.
-
-</p>
-
-<p>
-
-Wat mij drijft is simpel: zien dat het werkt. Bij mijn klanten, bij mijn team, bij mezelf. Geen genoegen nemen met 'goed genoeg', maar net zolang doorgaan tot het resultaat er staat.
-
-</p>
-
+<p>Wat mij drijft is simpel: zien dat het werkt. Bij mijn klanten, bij mijn team, bij mezelf. Geen genoegen nemen met 'goed genoeg', maar net zolang doorgaan tot het resultaat er staat.</p>
 </div>
-
 
 <div class="photo-sticky">
-
 <div class="photo-dash"></div>
-
 <div class="photo-duo">
-
 <img src="images/JayWhey.jpg" alt="Jerrel den Harder van Harder Coaching met Jay Whey tijdens het Jay Whey Muscle Camp in Thailand september 2025">
-
-<img class="offset" src="images/Henselmans.jpeg" alt="Jerrel den Harder van Harder Coaching met Menno Henselmans tijdens de uitrijking van de Henselmans PT Cursus in februari 2026">
-
+<img class="offset" src="images/Henselmans.jpeg" alt="Jerrel den Harder van Harder Coaching met Menno Henselmans tijdens de uitreiking van de Henselmans PT Cursus in februari 2026">
 </div>
-
 <div class="photo-dash bottom"></div>
-
 </div>
 
-
 </div>
-
-
 
 <div class="title-block center">
-
 <span class="eyebrow">Meer van mij</span>
-
-<h2>
-
-Volg het proces
-
-</h2>
-
+<h2>Volg het proces</h2>
 <div class="dash"></div>
-
 <p>Ik deel mijn eigen weg naar het podium en praat tweewekelijks met andere lifters, coaches en experts in de podcast. Wil je meer zien? Kijk hier mee.</p>
-
 </div>
-
 
 <div class="grid">
-
-
 <div class="video-block">
-
 <h3>Wedstrijdvoorbereiding</h3>
-
 <iframe src="https://www.youtube.com/embed/videoseries?list=PLW6RedeTohsK2sBBG8h05LUjbqehYLdRK" title="Bodybuildwedstrijd voorbereiding" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 </div>
-
-
 <div class="video-block">
-
 <h3>Podcast</h3>
-
 <iframe src="https://www.youtube.com/embed/videoseries?list=PLW6RedeTohsJB2mHH2ZAt44NofKtFpfO7" title="Harder Coaching Podcast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 </div>
-
-
 </div>
-
 
 </section>
 
-
-
-
-
+<!-- ═══ FAQ ════════════════════════════════════════════ -->
 <section class="container">
 
-
 <div class="title-block center">
-
 <span class="eyebrow">Vragen</span>
-
-<h2>
-
-Veelgestelde vragen
-
-</h2>
-
+<h2>Veelgestelde vragen</h2>
 <div class="dash"></div>
-
 </div>
 
-
-
 <details>
-
-<summary>
-
-Voor wie is Harder Coaching?
-
-</summary>
-
-<p>
-
-Voor serieuze lifters, natural bodybuilders en sporters met een duidelijk fysiek doel die al 2-3 jaar consistent trainen en de basis onder de knie hebben.
-
-</p>
-
+<summary>Voor wie is Harder Coaching?</summary>
+<p>Voor serieuze lifters, natural bodybuilders en sporters met een duidelijk fysiek doel die al 2-3 jaar consistent trainen en de basis onder de knie hebben.</p>
 </details>
 
-
-
 <details>
-
-<summary>
-
-Moet ik wedstrijden doen?
-
-</summary>
-
-<p>
-
-Nee. Coaching is ook geschikt voor recreatieve lifters en fotoshootdoelen.
-
-</p>
-
+<summary>Moet ik wedstrijden doen?</summary>
+<p>Nee. Coaching is ook geschikt voor recreatieve lifters en fotoshootdoelen.</p>
 </details>
 
-
-
 <details>
-
-<summary>
-
-Wat maakt dit anders?
-
-</summary>
-
-<p>
-
-De focus ligt op het optimaliseren van de details die op gevorderd niveau het verschil maken: techniek, timing van aanpassingen en poseren, in plaats van een standaard schema.
-
-</p>
-
+<summary>Wat maakt dit anders?</summary>
+<p>De focus ligt op het optimaliseren van de details die op gevorderd niveau het verschil maken: techniek, timing van aanpassingen en poseren, in plaats van een standaard schema.</p>
 </details>
 
-
 <details>
-
-<summary>
-
-Hoe werkt de check-in?
-
-</summary>
-
-<p>
-
-Je deelt wekelijks (of tweewekelijks) je trainings-, voedings- en herstelgegevens. Op basis daarvan krijg je concrete feedback en, waar nodig, een aanpassing van je plan.
-
-</p>
-
+<summary>Hoe werkt de check-in?</summary>
+<p>Je deelt wekelijks (of tweewekelijks) je trainings-, voedings- en herstelgegevens. Op basis daarvan krijg je concrete feedback en, waar nodig, een aanpassing van je plan.</p>
 </details>
-
 
 </section>
 
-
-
-
-
+<!-- ═══ FINAL CTA ══════════════════════════════════════ -->
 <section class="final" id="contact">
-
-
 <div class="container">
-
-
-<h2>
-
-Je hebt al jaren geïnvesteerd in je fysiek.
-
-</h2>
-
-
-<p>
-
-Ontdek welke details jouw volgende niveau bepalen.
-
-</p>
-
-
-<a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener">
-
-Plan jouw gratis intake
-
-</a>
-
+<h2>Je hebt al jaren geïnvesteerd in je fysiek</h2>
+<p>Ontdek welke details jouw volgende niveau bepalen.</p>
+<a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener">Plan jouw gratis intake</a>
 <p class="subtext">30 minuten, vrijblijvend</p>
-
-
 </div>
-
-
 </section>
 
-
-
-
-
-<footer>
-
-Harder Coaching
-
-</footer>
-
-
+<footer>Harder Coaching</footer>
 
 </body>
-
 </html>
