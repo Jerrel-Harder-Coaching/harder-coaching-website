@@ -346,31 +346,128 @@ a { color: inherit; }
     font-weight: 700;
 }
 
-/* ─── PRICING ────────────────────────────────────────── */
+/* ─── PRICING TABLE ──────────────────────────────────── */
 
-.price-card { text-align: center; }
-.price { font-size: 38px; font-weight: 700; color: var(--red); }
-.price span { font-size: 16px; font-weight: 300; color: var(--gray); }
-.price-sub { font-size: 14px; color: var(--gray); margin-top: 6px; }
-
-.badge {
-    display: inline-block;
-    background: var(--red);
-    color: #fff;
-    font-size: 12px; font-weight: 700;
-    letter-spacing: 1px; text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 16px;
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0,0,0,.08);
+    background: #fff;
 }
 
-.feature-card { margin-top: 28px; }
-.feature-card h3 { margin-top: 0; }
+/* Column widths */
+.pricing-table colgroup col:first-child { width: 42%; }
+.pricing-table colgroup col            { width: 29%; }
 
-.check-list { list-style: none; padding: 0; margin: 18px 0 10px; display: flex; flex-direction: column; gap: 12px; }
-.check-list li { position: relative; padding-left: 26px; font-size: 16px; color: var(--gray); }
-.check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--red); font-weight: 700; }
-.feature-note { font-size: 14px; color: var(--gray); margin-top: 14px; }
+/* Header row */
+.pricing-table thead tr { background: var(--dark); }
+
+.pricing-table thead th {
+    padding: 22px 24px;
+    text-align: left;
+    font-family: Manrope, sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.pricing-table thead th.col-plan {
+    font-family: Oswald, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #fff;
+    border-radius: 0;
+    vertical-align: bottom;
+    padding-bottom: 20px;
+}
+
+.plan-price {
+    display: block;
+    font-family: Oswald, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--red-light);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.plan-price-sub {
+    display: block;
+    font-size: 12px;
+    font-weight: 300;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+/* Feature rows */
+.pricing-table tbody tr { border-bottom: 1px solid #f0f0f0; }
+.pricing-table tbody tr:last-child { border-bottom: none; }
+.pricing-table tbody tr:hover { background: #fafafa; }
+
+.pricing-table tbody td {
+    padding: 16px 24px;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--gray);
+    vertical-align: middle;
+}
+
+.pricing-table tbody td.row-label {
+    font-weight: 500;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.pricing-table tbody td.row-note {
+    font-size: 13px;
+    color: #999;
+}
+
+/* Check / dash icons in cells */
+.td-check { text-align: center; }
+.td-check .icon-yes {
+    color: var(--green-mid);
+    font-size: 18px;
+    font-weight: 700;
+}
+.td-check .icon-diff {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+}
+.td-check .icon-no {
+    color: #ccc;
+    font-size: 20px;
+}
+
+/* Divider row (category label) */
+.pricing-table tbody tr.cat-row td {
+    background: var(--light);
+    font-family: Oswald, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--red);
+    padding: 10px 24px;
+}
+
+/* CTA row */
+.pricing-table tfoot tr { background: var(--dark); }
+.pricing-table tfoot td {
+    padding: 24px;
+    text-align: center;
+}
+.pricing-table tfoot td:first-child { text-align: left; }
+.pricing-table tfoot .foot-note {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
 
 /* ─── ABOUT ──────────────────────────────────────────── */
 
@@ -460,6 +557,12 @@ footer a { color: #ccc; }
     .about-split  { grid-template-columns: 1fr; gap: 32px; }
     .photo-sticky { position: static; }
     .photo-duo .offset { margin-top: 0; margin-left: 0; }
+
+    .pricing-table thead th.col-plan { font-size: 13px; }
+    .plan-price { font-size: 24px; }
+    .pricing-table tbody td { padding: 12px 14px; font-size: 14px; }
+    .pricing-table tbody td.row-label { font-size: 14px; }
+    .pricing-table tfoot td { padding: 16px 14px; }
 }
 
 </style>
@@ -673,38 +776,95 @@ footer a { color: #ccc; }
 <span class="eyebrow">Investering</span>
 <h2>Dit is mijn aanbod</h2>
 <div class="dash"></div>
-<p>Evidence-based coaching gebaseerd op data, ervaring en jouw persoonlijke feedback. Twee opties, hetzelfde traject. Het enige verschil is hoe vaak we contact hebben.</p>
+<p>Eén traject, twee ritmes. Kies de frequentie die bij jouw situatie past. Alles wat je nodig hebt om te groeien zit in beide opties.</p>
 </div>
 
-<div class="grid">
-<div class="card price-card">
-<div class="badge">Wekelijkse check-in</div>
-<div class="price">€279<span> / maand</span></div>
-<p class="price-sub">of €1.399,- eenmalig voor 6 maanden</p>
-</div>
-<div class="card price-card">
-<div class="badge">Tweewekelijkse check-in</div>
-<div class="price">€199<span> / maand</span></div>
-<p class="price-sub">of €979,- eenmalig voor 6 maanden</p>
-</div>
-</div>
+<table class="pricing-table">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th class="col-plan">
+<span class="plan-price">€279<small style="font-size:16px;font-weight:300;color:#aaa"> / mnd</small></span>
+<span class="plan-price-sub">of €1.399,- voor 6 maanden</span>
+Wekelijkse coaching
+</th>
+<th class="col-plan">
+<span class="plan-price">€199<small style="font-size:16px;font-weight:300;color:#aaa"> / mnd</small></span>
+<span class="plan-price-sub">of €979,- voor 6 maanden</span>
+Tweewekelijkse coaching
+</th>
+</tr>
+</thead>
+<tbody>
 
-<div class="card feature-card">
-<h3>Dit krijg je bij beide trajecten</h3>
-<ul class="check-list">
-<li>Persoonlijk trainingsplan</li>
-<li>Wekelijkse techniek-analyse</li>
-<li>Feedback op poseren</li>
-<li>Een heldere timeline inclusief progressie tracking</li>
-<li>Voedingsaanpak naar keuze: kant-en-klaar plan of zelf bijhouden op basis van principes</li>
-<li>Leefstijlbegeleiding (slaap, stress, herstel)</li>
-</ul>
-<p class="feature-note">Het enige verschil: de accountability- en reflectiecall vindt wekelijks of tweewekelijks plaats. Tweewekelijkse coaching is niet mogelijk tijdens wedstrijdprep.</p>
-</div>
+<tr class="cat-row"><td colspan="3">Resultaat</td></tr>
 
-<div class="center">
-<a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener">Start intake</a>
-</div>
+<tr>
+<td class="row-label">Persoonlijk trainingsplan</td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+</tr>
+<tr>
+<td class="row-label">Wekelijkse techniek-analyse</td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+</tr>
+<tr>
+<td class="row-label">Feedback op poseren</td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+</tr>
+<tr>
+<td class="row-label">Progressie tracking en heldere timeline</td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+</tr>
+
+<tr class="cat-row"><td colspan="3">Voeding & leefstijl</td></tr>
+
+<tr>
+<td class="row-label">Voedingsaanpak naar keuze</td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+</tr>
+<tr>
+<td class="row-label">Leefstijlbegeleiding (slaap, stress, herstel)</td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+</tr>
+
+<tr class="cat-row"><td colspan="3">Begeleiding</td></tr>
+
+<tr>
+<td class="row-label">Accountability &amp; reflectiecall</td>
+<td class="td-check"><span class="icon-diff">Wekelijks</span></td>
+<td class="td-check"><span class="icon-diff">Tweewekelijks</span></td>
+</tr>
+<tr>
+<td class="row-label">Doorlopend contact en feedback</td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+</tr>
+<tr>
+<td class="row-label row-note">Beschikbaar tijdens wedstrijdprep</td>
+<td class="td-check"><span class="icon-yes">✓</span></td>
+<td class="td-check"><span class="icon-no">—</span></td>
+</tr>
+
+</tbody>
+<tfoot>
+<tr>
+<td><p class="foot-note">Geen verborgen kosten. Geen automatische verlenging zonder akkoord.</p></td>
+<td><a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener" style="margin-top:0;">Start intake</a></td>
+<td><a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener" style="margin-top:0;">Start intake</a></td>
+</tr>
+</tfoot>
+</table>
 
 </section>
 
