@@ -21,6 +21,7 @@
     --red:         #780000;
     --red-hover:   #5a0000;
     --red-light:   #D66B6B;
+    --red-bright:  #ff8a8a; /* Aangepast voor betere zichtbaarheid op donkere achtergrond */
     --red-bg:      rgba(120,0,0,.08);
 
     --dark:        #111111;
@@ -383,6 +384,12 @@ a { color: inherit; }
     border-radius: 0;
     vertical-align: bottom;
     padding-bottom: 20px;
+    text-align: center;
+}
+
+.plan-title {
+    display: block;
+    margin-bottom: 12px;
 }
 
 .plan-price {
@@ -390,16 +397,30 @@ a { color: inherit; }
     font-family: Oswald, sans-serif;
     font-size: 32px;
     font-weight: 700;
-    color: var(--red-light);
+    color: var(--red-bright);
     line-height: 1;
     margin-bottom: 4px;
 }
+
+.plan-duration {
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    color: #ccc;
+    margin-bottom: 8px;
+    font-family: Manrope, sans-serif;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
 .plan-price-sub {
     display: block;
     font-size: 12px;
     font-weight: 300;
     color: #888;
     margin-bottom: 10px;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
 /* Feature rows */
@@ -422,7 +443,8 @@ a { color: inherit; }
 }
 
 .pricing-table tbody td.row-note {
-    font-size: 13px;
+    font-weight: 500;
+    font-size: 15px;
     color: #999;
 }
 
@@ -575,13 +597,15 @@ footer a { color: #ccc; }
 <div class="container">
 <div class="hero-content">
 
-<h1>Je traint al jaren serieus. Ik help je de <span class="text-rl">puntjes op de i</span> te zetten.</h1>
+<h1>Je traint al jaren serieus. Ik help je de <span class="text-rl">puntjes op de <span style="text-transform: lowercase;">i</span></span> te zetten.</h1>
 
 <p>Je mist geen trainingen, je let op je voeding en je hebt een goed fysiek opgebouwd. Maar op jouw niveau zit de grootste winst niet meer in harder werken.</p>
 
 <p>Ik help serieuze lifters en natural bodybuilders die een goed fysiek hebben gebouwd om de puntjes op de i te zetten. Door training, voeding, herstel en poseren te verbeteren op basis van data, feedback en ervaring.</p>
 
+<div class="center">
 <a class="btn" href="#contact">Bekijk of coaching bij jou past</a>
+</div>
 
 </div>
 </div>
@@ -623,9 +647,9 @@ footer a { color: #ccc; }
 <li><strong>Persoonlijke begeleiding</strong>(Twee-)wekelijkse check-ins, doorlopend contact en uitgebreide feedback.</li>
 <li><strong>Duidelijke, gestructureerde timeline</strong>Weet precies in welke fase (groei, diet/prep of peak) je zit en hoe de overgangen gepland zijn.</li>
 <li><strong>Optimale uitvoering van je training</strong>Train met de juiste intensiteit en techniek door middel van wekelijkse video-analyses.</li>
-<li><strong>Optimalisatie van iedere fase</strong>Haal het maximale uit elke fase van je fysieke reis: groei, diet/prep en peak.</li>
+<!--<li><strong>Optimalisatie van iedere fase</strong>Haal het maximale uit elke fase van je fysieke reis: groei, diet/prep en peak.</li>-->
 <li><strong>Geavanceerde datatracking</strong>Biometrische data (HRV, slaapkwaliteit, rusthartslag) en trainingsdata bijhouden, analyseren en gebruiken om bij te sturen.</li>
-<li><strong>Presenteren van je fysiek</strong>Je leert je fysiek presenteren, of dat nu voor een festival, fotoshoot of bodybuildwedstrijd is.</li>
+<li><strong>Poseren van je fysiek</strong>Je leert je fysiek presenteren, of dat nu voor een festival, fotoshoot of bodybuildwedstrijd is.</li>
 <li><strong>Vertrouwen in het proces</strong>Begrijp waarom elke keuze wordt gemaakt en geniet van de weg richting je doelen.</li>
 </ul>
 
@@ -661,7 +685,7 @@ footer a { color: #ccc; }
     <span class="eyebrow">Het verschil</span>
     <h2>Zo ziet verandering eruit</h2>
     <div class="dash" style="margin:18px 0 0;"></div>
-    <p style="margin-top:20px;">Elke situatie links is precies waar mijn klanten uitkomen. Rechts is waar ze naartoe gaan.</p>
+    <p style="margin-top:20px;">De situatie links is precies waarmee mijn klanten binnenkomen. Rechts werken we samen naartoe.</p>
   </div>
 
   <div class="verschil-rows">
@@ -789,14 +813,16 @@ footer a { color: #ccc; }
 <tr>
 <th></th>
 <th class="col-plan">
-<span class="plan-price">€279<small style="font-size:16px;font-weight:300;color:#aaa"> / mnd</small></span>
-<span class="plan-price-sub">of €1.399,- voor 6 maanden</span>
-Wekelijkse coaching
+<span class="plan-title">Wekelijkse coaching</span>
+<span class="plan-price">€1.399,-</span>
+<span class="plan-duration">voor 6 maanden</span>
+<span class="plan-price-sub">of €279,- per maand</span>
 </th>
 <th class="col-plan">
-<span class="plan-price">€199<small style="font-size:16px;font-weight:300;color:#aaa"> / mnd</small></span>
-<span class="plan-price-sub">of €979,- voor 6 maanden</span>
-Tweewekelijkse coaching
+<span class="plan-title">Tweewekelijkse coaching</span>
+<span class="plan-price">€979,-</span>
+<span class="plan-duration">voor 6 maanden</span>
+<span class="plan-price-sub">of €199,- per maand</span>
 </th>
 </tr>
 </thead>
@@ -851,7 +877,7 @@ Tweewekelijkse coaching
 <td class="td-check"><span class="icon-yes">✓</span></td>
 </tr>
 <tr>
-<td class="row-label">Beschikbaar tijdens wedstrijdprep</td>
+<td class="row-note">Beschikbaar tijdens wedstrijdprep</td>
 <td class="td-check"><span class="icon-yes">✓</span></td>
 <td class="td-check"><span class="icon-no">—</span></td>
 </tr>
@@ -860,8 +886,7 @@ Tweewekelijkse coaching
 <tfoot>
 <tr>
 <td><p class="foot-note">Geen verborgen kosten. Geen automatische verlenging zonder akkoord.</p></td>
-<td><a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener" style="margin-top:0;">Start intake</a></td>
-<td><a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener" style="margin-top:0;">Start intake</a></td>
+<td colspan="2"><a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener" style="margin-top:0;">Start intake</a></td>
 </tr>
 </tfoot>
 </table>
