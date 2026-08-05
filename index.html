@@ -64,6 +64,9 @@ h1 {
 
     font-size:60px;
 
+    text-transform:uppercase;
+    letter-spacing:.5px;
+
 }
 
 
@@ -770,6 +773,250 @@ p {
 
 
 
+/* SOLUTION LIST (Hoe ik dat oplos) */
+
+
+.solution-list {
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:16px 40px;
+
+}
+
+
+.solution-list li {
+
+    position:relative;
+
+    padding-left:28px;
+
+    font-size:15px;
+
+    color:var(--gray);
+
+}
+
+
+.dark .solution-list li {
+
+    color:#dddddd;
+
+}
+
+
+.solution-list li::before {
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:1px;
+
+    color:var(--red);
+
+    font-weight:bold;
+
+}
+
+
+.dark .solution-list li::before {
+
+    color:#ff6666;
+
+}
+
+
+.solution-list li strong {
+
+    display:block;
+
+    font-size:16px;
+
+    color:var(--text);
+
+    margin-bottom:2px;
+
+}
+
+
+.dark .solution-list li strong {
+
+    color:white;
+
+}
+
+
+
+
+
+/* ABOUT PHOTOS */
+
+
+.about-split {
+
+    display:grid;
+
+    grid-template-columns:1.1fr 1fr;
+
+    gap:60px;
+
+    align-items:start;
+
+    margin-bottom:70px;
+
+}
+
+
+.photo-duo {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+
+.photo-duo img {
+
+    width:100%;
+
+    height:100%;
+
+    min-height:260px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    display:block;
+
+}
+
+
+.photo-duo .offset {
+
+    margin-top:40px;
+
+}
+
+
+.about-split .dash {
+
+    margin:0 0 20px auto;
+
+}
+
+
+/* VIDEO EMBEDS */
+
+
+.video-block iframe {
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border-radius:15px;
+
+    border:none;
+
+    display:block;
+
+}
+
+
+.video-block h3 {
+
+    margin-bottom:14px;
+
+}
+
+
+/* QUALIFY LIST (Ik werk niet met iedereen) */
+
+
+.yes-list,
+.no-list {
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+
+.yes-list li,
+.no-list li {
+
+    position:relative;
+
+    padding-left:32px;
+
+    margin-bottom:16px;
+
+    font-size:16px;
+
+}
+
+
+.yes-list li::before {
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:#1b4332;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
+
+
+.dark .yes-list li::before {
+
+    color:#4caf7d;
+
+}
+
+
+.no-list li::before {
+
+    content:"✕";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:var(--red);
+
+    font-weight:bold;
+
+    font-size:16px;
+
+}
 
 
 /* FAQ */
@@ -995,6 +1242,29 @@ h2 {
 }
 
 
+.about-split {
+
+    grid-template-columns:1fr;
+
+    gap:35px;
+
+}
+
+
+.photo-duo .offset {
+
+    margin-top:0;
+
+}
+
+
+.about-split .dash {
+
+    margin:0 auto 20px;
+
+}
+
+
 }
 
 
@@ -1014,9 +1284,6 @@ h2 {
 <div class="container">
 
 <div class="hero-content">
-
-
-<span class="eyebrow">Coaching voor serieuze lifters</span>
 
 
 <h1>
@@ -1083,19 +1350,13 @@ Je doet alles goed. Toch voelt het alsof er meer in zit.
 
 <p>
 
-Je traint al jaren serieus. Je voeding is op orde, je slaat geen trainingen over en je houdt je progressie goed bij. Toch heb je het gevoel dat er meer in zit dan er nu uitkomt.
+Je traint al jaren serieus. Je voeding is op orde, je slaat geen trainingen over en je houdt je progressie goed bij. Toch heb je het gevoel dat er meer in zit dan er nu uitkomt, niet omdat je niet hard genoeg werkt, maar omdat je niet altijd weet wanneer en hoe je jouw training, voeding of cardio moet aanpassen naarmate je lichaam meer gevorderd is.
 
 </p>
 
 <p>
 
-Niet omdat je niet hard genoeg werkt, maar omdat je niet altijd weet wanneer en hoe je jouw training, voeding of cardio moet aanpassen naarmate je lichaam meer gevorderd is. Je maakt keuzes nu op basis van gevoel of online trends, terwijl juist de timing van die keuzes bepaalt of je plateau's doorbreekt, vet verliest of optimaal piekt.
-
-</p>
-
-<p>
-
-Je hebt inmiddels een goed fysiek opgebouwd, maar de puntjes op de i ontbreken. Je trainingstechniek kan efficiënter, je set-intensiteit kan consistenter en je fysieke presentatie vele malen beter. Juist die kleine details maken het verschil tussen een 'goed' en een 'buitengewoon' fysiek.
+Je maakt keuzes nu op basis van gevoel of online trends, terwijl juist de timing van die keuzes bepaalt of je plateau's doorbreekt, vet verliest of optimaal piekt. Je hebt inmiddels een goed fysiek opgebouwd, maar de puntjes op de i ontbreken: techniek, intensiteit en presentatie kunnen nog een stuk beter. Juist die kleine details maken het verschil tussen een 'goed' en een 'buitengewoon' fysiek.
 
 </p>
 
@@ -1134,73 +1395,23 @@ Hoe ik dat oplos
 
 
 
-<div class="grid grid-small">
+<ul class="solution-list">
 
+<li><strong>Persoonlijke begeleiding</strong>(Twee-)wekelijkse check-ins, doorlopend contact en uitgebreide feedback.</li>
 
-<div class="card card-small">
+<li><strong>Duidelijke, gestructureerde timeline</strong>Weet precies in welke fase (groei, diet/prep of peak) je zit en hoe de overgangen gepland zijn.</li>
 
-<h3>Persoonlijke begeleiding</h3>
+<li><strong>Optimale uitvoering van je training</strong>Train met de juiste intensiteit en techniek door middel van wekelijkse video-analyses.</li>
 
-<p>(Twee-)wekelijkse check-ins, doorlopend contact en uitgebreide feedback.</p>
+<li><strong>Optimalisatie van iedere fase</strong>Haal het maximale uit elke fase van je fysieke reis: groei, diet/prep en peak.</li>
 
-</div>
+<li><strong>Geavanceerde datatracking</strong>Biometrische data (HRV, slaapkwaliteit, rusthartslag) en trainingsdata bijhouden, analyseren en gebruiken om bij te sturen.</li>
 
+<li><strong>Presenteren van je fysiek</strong>Je leert je fysiek presenteren, of dat nu voor een festival, fotoshoot of bodybuildwedstrijd is.</li>
 
-<div class="card card-small">
+<li><strong>Vertrouwen in het proces</strong>Begrijp waarom elke keuze wordt gemaakt en geniet van de weg richting je doelen.</li>
 
-<h3>Duidelijke, gestructureerde timeline</h3>
-
-<p>Weet precies in welke fase (growth, diet/prep of peak) je zit en hoe de overgangen gepland zijn.</p>
-
-</div>
-
-
-<div class="card card-small">
-
-<h3>Optimale uitvoering van je training</h3>
-
-<p>Train met de juiste intensiteit en techniek door middel van wekelijkse video-analyses.</p>
-
-</div>
-
-
-<div class="card card-small">
-
-<h3>Optimalisatie van iedere fase</h3>
-
-<p>Haal het maximale uit elke fase van je fysieke reis: groei, diet/prep en peak.</p>
-
-</div>
-
-
-<div class="card card-small">
-
-<h3>Geavanceerde datatracking</h3>
-
-<p>We houden jouw biometrische data (zoals HRV, slaapkwaliteit en rusthartslag) en trainingsdata bij, analyseren deze en sturen bij zodat je blijft groeien.</p>
-
-</div>
-
-
-<div class="card card-small">
-
-<h3>Presenteren van je fysiek</h3>
-
-<p>We zorgen dat jij weet hoe je jouw fysiek kan presenteren. Of dat nu voor een festival, fotoshoot of bodybuildwedstrijd is.</p>
-
-</div>
-
-
-<div class="card card-small">
-
-<h3>Vertrouwen in het proces</h3>
-
-<p>Begrijp waarom elke keuze wordt gemaakt en geniet van de weg richting je doelen.</p>
-
-</div>
-
-
-</div>
+</ul>
 
 
 </div>
@@ -1221,7 +1432,7 @@ Hoe ik dat oplos
 
 <h2>
 
-Klantresultaten
+Dit ervaren mijn klanten
 
 </h2>
 
@@ -1356,6 +1567,145 @@ Zo werkt het met Harder Coaching
 
 <div class="title-block center">
 
+<span class="eyebrow">Fit check</span>
+
+<h2>
+
+Ik werk niet met iedereen
+
+</h2>
+
+<div class="dash"></div>
+
+</div>
+
+
+
+<div class="compare">
+
+
+<div class="card solution">
+
+
+<h3>
+
+Dit is voor jou als:
+
+</h3>
+
+
+<ul class="yes-list">
+
+<li>Je bent klaar om je training serieus aan te pakken met een coach en wilt zien wat er mogelijk is.</li>
+
+<li>Je wilt 3 tot 5 keer per week trainen en doet consistent wat nodig is, ook als je er even geen zin in hebt.</li>
+
+<li>Je bent eerlijk tegen jezelf en tegen mij over wat wel en niet goed gaat.</li>
+
+<li>Je ziet coaching als een investering in je toekomst, niet als iets vrijblijvends.</li>
+
+</ul>
+
+
+</div>
+
+
+
+<div class="card problem">
+
+
+<h3>
+
+Dit is niet voor jou als:
+
+</h3>
+
+
+<ul class="no-list">
+
+<li>Je bent net begonnen met trainen en hebt iemand nodig die je handje vasthoudt.</li>
+
+<li>Je praat jezelf regelmatig uit keuzes die je eigenlijk al weet dat je moet maken.</li>
+
+<li>Je verwacht resultaten zonder jezelf verantwoordelijk te houden voor het proces.</li>
+
+<li>Je wilt alleen bevestiging dat je 'goed bezig bent', zonder echt te veranderen.</li>
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="dark">
+
+
+<div class="container">
+
+
+<div class="split">
+
+
+<div>
+
+<div class="title-block left">
+
+<span class="eyebrow">Wat je nodig hebt</span>
+
+<h2>Zo ziet spiergroei eruit</h2>
+
+<div class="dash"></div>
+
+</div>
+
+
+<ul class="desire-list">
+
+<li>Een fysiek dat past bij jouw potentieel.</li>
+
+<li>Vertrouwen in je aanpak, omdat je weet waarom elke keuze wordt gemaakt.</li>
+
+<li>Elke herhaling met de juiste techniek: pijnvrije gewrichten en maximale spiergroei.</li>
+
+<li>Nooit meer twijfelen of je wel goed bezig bent.</li>
+
+<li>Je spieren 'blind' aansturen en presenteren, zodat je fysiek er altijd top uitziet.</li>
+
+<li>Een coach die de details begrijpt die op jouw niveau het verschil maken.</li>
+
+</ul>
+
+</div>
+
+
+<img src="images/Verlangen.png" alt="Jerrel den Harder, Harder Coaching">
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="container">
+
+
+<div class="title-block center">
+
 <span class="eyebrow">Investering</span>
 
 <h2>
@@ -1366,7 +1716,7 @@ Coaching trajecten
 
 <div class="dash"></div>
 
-<p>Evidence-based coaching gebaseerd op data, ervaring en jouw persoonlijke feedback. Twee opties, hetzelfde traject &mdash; het enige verschil is hoe vaak we contact hebben.</p>
+<p>Evidence-based coaching gebaseerd op data, ervaring en jouw persoonlijke feedback. Twee opties, hetzelfde traject. Het enige verschil is hoe vaak we contact hebben.</p>
 
 </div>
 
@@ -1410,15 +1760,15 @@ Coaching trajecten
 
 <li>Persoonlijk trainingsplan</li>
 
-<li>Wekelijkse techniek analyse</li>
+<li>Wekelijkse techniek-analyse</li>
 
-<li>Kant-en-klaar voedingsplan, zodat je zelf niet hoeft na te denken of bij te houden</li>
+<li>Voedingsaanpak naar keuze: kant-en-klaar plan of zelf bijhouden</li>
 
-<li>Leefstijl verbeteren (slaap, stress, herstel)</li>
+<li>Leefstijlbegeleiding (slaap, stress, herstel)</li>
 
 <li>Feedback op poseren</li>
 
-<li>Meetmomenten en progressie tracking</li>
+<li>Progressie tracking</li>
 
 </ul>
 
@@ -1444,66 +1794,13 @@ Start intake
 
 
 
-<section class="dark">
-
-
-<div class="container">
-
-
-<div class="split">
-
-
-<div>
-
-<div class="title-block left">
-
-<span class="eyebrow">Wat je krijgt</span>
-
-<h2>Zo ziet spiergroei eruit</h2>
-
-<div class="dash"></div>
-
-</div>
-
-
-<ul class="desire-list">
-
-<li>Een fysiek dat past bij jouw potentieel.</li>
-
-<li>Vertrouwen in je aanpak, omdat je weet waarom elke keuze wordt gemaakt.</li>
-
-<li>Elke herhaling met de juiste techniek: pijnvrije gewrichten en maximale spiergroei.</li>
-
-<li>Nooit meer twijfelen of je wel goed bezig bent.</li>
-
-<li>Je spieren 'blind' aansturen en presenteren, zodat je fysiek er altijd top uitziet.</li>
-
-<li>Een coach die de details begrijpt die op jouw niveau het verschil maken.</li>
-
-</ul>
-
-</div>
-
-
-<img src="images/Verlangen.png" alt="Jerrel den Harder, Harder Coaching">
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
 <section class="container">
 
 
-<div class="title-block center">
+<div class="about-split">
+
+
+<div>
 
 <span class="eyebrow">Over mij</span>
 
@@ -1513,34 +1810,88 @@ Als jij <span class="accent-text">maximaal resultaat</span> behaald ben ik <span
 
 </h2>
 
-<div class="dash"></div>
+<div class="dash" style="margin:20px 0 30px;"></div>
+
+
+<p>
+
+Ik kom uit de powerlifting. Daar was vooruitgang lekker simpel: meer gewicht op de stang. Toen ik overstapte naar bodybuilding, miste ik dat in het begin echt. Tot ik doorhad dat niet de sport het probleem was, maar mijn aanpak. Zodra ik dat omgooide, ging ik er helemaal voor: spieropbouw en posing, en dat heb ik nooit meer losgelaten.
+
+</p>
+
+<p>
+
+Op een gegeven moment liep ik vast. Zelf video's kijken en dingen uitproberen bracht me niet meer verder. Dus ben ik coaching gaan volgen, en niet lang daarna heb ik zelf de knoop doorgehakt om ook mensen te gaan begeleiden. Ik zag simpelweg hoeveel verschil het maakt als iemand precies weet welke knop hij op welk moment moet omdraaien.
+
+</p>
+
+<p>
+
+Structuur is voor mij geen bijzaak, het is de basis waar alles op draait. Diezelfde discipline gebruik ik om naast mijn coaching ook <a href="https://datavance.nl" target="_blank" rel="noopener" class="accent-text">Datavance</a>, mijn databedrijf, te runnen. Ik houd het aantal klanten bewust klein, zodat iedereen de aandacht krijgt die nodig is om écht vooruitgang te boeken.
+
+</p>
+
+<p>
+
+Wat mij drijft is simpel: zien dat het werkt. Bij mijn klanten, bij mijn team, bij mezelf. Geen genoegen nemen met 'goed genoeg', maar net zolang doorgaan tot het resultaat er staat.
+
+</p>
 
 </div>
 
 
-<p>
+<div class="photo-duo">
 
-Ik kom uit de powerlifting, waar vooruitgang simpel meetbaar was: meer gewicht op de stang. Toen ik overstapte naar bodybuilding miste ik dat in het begin, tot ik besefte dat de aanpak het probleem was, niet de sport. Zodra ik die aanpak omgooide, ging ik volledig voor spieropbouw en posing, en heb ik dat nooit meer losgelaten.
+<img src="images/Verlangen.png" alt="Jerrel den Harder, Harder Coaching">
 
-</p>
+<img class="offset" src="images/Eten.jpg" alt="Jerrel den Harder">
 
-<p>
+</div>
 
-Op een gegeven moment liep ik tegen mijn eigen plafond aan: zelf video's kijken en dingen uitproberen was niet meer genoeg om vooruit te komen. Ik ben coaching gaan volgen en heb daarna zelf de stap gemaakt om mensen te gaan begeleiden, omdat ik zag hoeveel verschil de juiste feedback op het juiste moment maakt.
 
-</p>
+</div>
 
-<p>
 
-Structuur is voor mij geen bijzaak, het is de basis. Ik ben al vroeg gewend geraakt om mijn eigen kaders te bouwen, en diezelfde discipline gebruik ik nu om zowel mijn dataconsultancy als mijn coachingpraktijk te runnen. Ik houd het aantal cliënten bewust beperkt, zodat ik iedereen de aandacht kan geven die nodig is om echt vooruitgang te boeken.
 
-</p>
+<div class="title-block center">
 
-<p>
+<span class="eyebrow">Meer van mij</span>
 
-Wat mij drijft is simpel: zien dat het werkt. Bij mijn cliënten, bij mijn team, bij mezelf. Geen genoegen nemen met 'goed genoeg', maar net zolang doorgaan tot het resultaat er staat.
+<h2>
 
-</p>
+Volg het proces
+
+</h2>
+
+<div class="dash"></div>
+
+<p>Ik deel mijn eigen weg naar het podium en praat wekelijks met andere lifters en coaches in de podcast. Wil je meer zien? Kijk hier mee.</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="video-block">
+
+<h3>Podcast</h3>
+
+<iframe src="https://www.youtube.com/embed/videoseries?list=PLW6RedeTohsJB2mHH2ZAt44NofKtFpfO7" title="Harder Coaching Podcast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</div>
+
+
+<div class="video-block">
+
+<h3>Wedstrijdvoorbereiding</h3>
+
+<iframe src="https://www.youtube.com/embed/videoseries?list=PLW6RedeTohsK2sBBG8h05LUjbqehYLdRK" title="Bodybuildwedstrijd voorbereiding" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</div>
+
+
+</div>
 
 
 </section>
