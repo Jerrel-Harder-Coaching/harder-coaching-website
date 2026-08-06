@@ -160,12 +160,15 @@
             text-transform: uppercase;
             color: var(--red);
             margin-bottom: 12px;
+            white-space: nowrap;
         }
 
         .eyebrow-icon {
             height: 13px;
             width: auto;
             display: inline-block;
+            flex-shrink: 0;
+            object-fit: contain;
         }
 
         .dark .eyebrow {
@@ -740,16 +743,6 @@
             text-align: center;
         }
 
-        .pricing-table tfoot td:first-child {
-            text-align: left;
-        }
-
-        .pricing-table tfoot .foot-note {
-            font-size: 13px;
-            color: #777;
-            margin: 0;
-        }
-
 
         /* ─── ABOUT ──────────────────────────────────────────── */
 
@@ -857,11 +850,12 @@
 
         .video-card h3 {
             margin: 0 0 4px;
+            color: #fff;
         }
 
         .video-card .video-sub {
             font-size: 14px;
-            color: #999;
+            color: #aaa;
             margin: 0 0 16px;
         }
 
@@ -1397,10 +1391,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td>
-                        <p class="foot-note">Geen verborgen kosten. Geen automatische verlenging zonder akkoord.</p>
-                    </td>
-                    <td colspan="2"><a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener" style="margin-top:0;">Start intake</a></td>
+                    <td colspan="3"><a class="btn" href="https://cal.com/jerreldenharder/30min" target="_blank" rel="noopener" style="margin-top:0;">Start intake</a></td>
                 </tr>
             </tfoot>
         </table>
@@ -1417,11 +1408,11 @@
                 <h2>Als jij <span class="text-red">maximaal resultaat</span> behaald ben ik <span class="text-red">tevreden</span></h2>
                 <div class="dash" style="margin:20px 0 28px;"></div>
 
-                <p>Ik kom uit de powerlifting. Daar was vooruitgang lekker simpel: meer gewicht op de stang. Toen ik overstapte naar bodybuilding, miste ik dat in het begin echt. Tot ik doorhad dat niet de sport het probleem was, maar mijn aanpak. Zodra ik dat omgooide, ging ik er helemaal voor: spieropbouw en posing. Dat heb ik nooit meer losgelaten.</p>
+                <p>Ik ben begonnen in de gym met powerliften. Daar was progressie lekker simpel: meer gewicht op de stang. Toen ik overstapte naar bodybuilding, miste ik dat in het begin echt. Tot ik doorhad dat niet de sport het probleem was, maar mijn aanpak. Zodra ik dat omgooide, ging ik er helemaal voor: spieropbouw en posing. Dat heb ik nooit meer losgelaten.</p>
 
                 <p>Op een gegeven moment liep ik vast. Zelf video's kijken en dingen uitproberen bracht me niet meer verder. Dus ben ik coaching gaan volgen. Na het doen van de Henselmans PT Cursus en Jay Whey Muscle Camp heb ik zelf de knoop doorgehakt om ook mensen te gaan begeleiden. Ik zag simpelweg hoeveel verschil het maakt als iemand precies weet welke knop hij op welk moment moet omdraaien.</p>
 
-                <p>Structuur is voor mij geen bijzaak, het is de basis waar alles op draait. Diezelfde discipline gebruik ik om naast mijn coaching ook <a href="https://datavance.nl" target="_blank" rel="noopener" class="text-yellow">Datavance</a>, mijn databedrijf, te runnen. Ik houd het aantal klanten bewust klein, zodat iedereen de aandacht krijgt die nodig is om echt vooruitgang te boeken.</p>
+                <p>Structuur is voor mij geen bijzaak, het is de basis waar ik mijn leven op gebouwd heb. Diezelfde discipline gebruik ik om naast mijn coaching ook <a href="https://datavance.nl" target="_blank" rel="noopener" class="text-yellow">Datavance</a>, mijn databedrijf, te runnen. Ik houd het aantal klanten bewust klein, zodat iedereen de aandacht krijgt die nodig is om echt vooruitgang te boeken.</p>
 
                 <p>Wat mij drijft is simpel: zien dat het werkt. Bij mijn klanten, bij mijn team, bij mezelf. Geen genoegen nemen met 'goed genoeg', maar net zolang doorgaan tot het resultaat er staat.</p>
             </div>
