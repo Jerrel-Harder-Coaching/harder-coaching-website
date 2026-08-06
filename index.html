@@ -116,16 +116,56 @@
             color: var(--yellow);
         }
 
+        /* ─── SITE HEADER / LOGO ─────────────────────────────── */
+
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 30;
+            padding: 28px 25px;
+            display: flex;
+        }
+
+        .site-header .logo-link {
+            display: inline-flex;
+        }
+
+        .site-header img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        @media (max-width: 700px) {
+            .site-header {
+                padding: 20px;
+            }
+
+            .site-header img {
+                height: 32px;
+            }
+        }
+
         /* ─── EYEBROW / TITLE BLOCK ──────────────────────────── */
 
         .eyebrow {
-            display: block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-size: 13px;
             font-weight: 800;
             letter-spacing: 2.5px;
             text-transform: uppercase;
             color: var(--red);
             margin-bottom: 12px;
+        }
+
+        .eyebrow-icon {
+            height: 13px;
+            width: auto;
+            display: inline-block;
         }
 
         .dark .eyebrow {
@@ -200,6 +240,7 @@
         /* ─── HERO ───────────────────────────────────────────── */
 
         .hero {
+            position: relative;
             min-height: 90vh;
             display: flex;
             align-items: center;
@@ -748,16 +789,83 @@
             margin-left: -24px;
         }
 
-        /* ─── VIDEO ──────────────────────────────────────────── */
+        /* ─── VIDEOS (Wedstrijdvoorbereiding / Podcast) ──────── */
 
-        .video-block h3 {
-            margin-bottom: 12px;
+        .videos-wrap {
+            position: relative;
         }
 
-        .video-block iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
+        .videos-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .videos-grid::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            transform: translateX(-50%);
+            background: linear-gradient(to bottom,
+                    rgba(120, 0, 0, 0) 0%,
+                    var(--red) 12%,
+                    var(--red) 88%,
+                    rgba(120, 0, 0, 0) 100%);
+        }
+
+        .video-divider-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
+            z-index: 2;
+        }
+
+        .video-divider-badge img {
+            width: 30px;
+            height: auto;
+            display: block;
+        }
+
+        .video-card {
+            background: var(--dark-card);
             border-radius: var(--radius);
+            padding: 28px;
+            border-top: 4px solid var(--red);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, .25);
+        }
+
+        .video-card h3 {
+            margin: 0 0 4px;
+        }
+
+        .video-card .video-sub {
+            font-size: 14px;
+            color: #999;
+            margin: 0 0 16px;
+        }
+
+        .video-frame {
+            border-radius: 10px;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .video-card iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
             border: none;
             display: block;
         }
@@ -780,8 +888,27 @@
         /* ─── FINAL CTA ──────────────────────────────────────── */
 
         .final {
+            position: relative;
+            overflow: hidden;
             background: var(--red);
             text-align: center;
+        }
+
+        .final::before {
+            content: "";
+            position: absolute;
+            right: -70px;
+            bottom: -60px;
+            width: 320px;
+            height: 320px;
+            background: url("images/Berg_rood_Berg_Wit.png") no-repeat center / contain;
+            opacity: .12;
+            pointer-events: none;
+        }
+
+        .final .container {
+            position: relative;
+            z-index: 1;
         }
 
         .final h2,
@@ -815,6 +942,18 @@
             color: #fff;
             text-align: center;
             padding: 40px;
+        }
+
+        footer .footer-logo {
+            height: 46px;
+            width: auto;
+            margin-bottom: 14px;
+        }
+
+        footer .footer-text {
+            font-size: 13px;
+            color: #888;
+            letter-spacing: .5px;
         }
 
         footer a {
@@ -908,6 +1047,16 @@
                 margin-left: 0;
             }
 
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .videos-grid::before,
+            .video-divider-badge {
+                display: none;
+            }
+
             .pricing-table thead th.col-plan {
                 font-size: 13px;
             }
@@ -936,6 +1085,13 @@
 
     <!-- ═══ HERO ══════════════════════════════════════════ -->
     <section class="hero">
+
+        <header class="site-header">
+            <a class="logo-link" href="#" aria-label="Harder Coaching home">
+                <img src="images/Berg_rood_Harder+Coaching_Wit.png" alt="Harder Coaching logo">
+            </a>
+        </header>
+
         <div class="container">
             <div class="hero-content">
 
@@ -957,7 +1113,7 @@
     <section class="container">
 
         <div class="title-block center">
-            <span class="eyebrow">Het probleem</span>
+            <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Het probleem</span>
             <h2>Je doet alles goed, toch voelt het alsof er meer in zit</h2>
             <div class="dash"></div>
         </div>
@@ -980,7 +1136,7 @@
         <div class="container">
 
             <div class="title-block center">
-                <span class="eyebrow">De aanpak</span>
+                <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">De aanpak</span>
                 <h2>Zo los ik dat op</h2>
                 <div class="dash"></div>
             </div>
@@ -1002,7 +1158,7 @@
     <section class="container">
 
         <div class="title-block center">
-            <span class="eyebrow">Resultaat</span>
+            <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Resultaat</span>
             <h2>Dit ervaren mijn klanten</h2>
             <div class="dash"></div>
         </div>
@@ -1024,7 +1180,7 @@
             <div class="verschil-wrap">
 
                 <div class="verschil-title-col">
-                    <span class="eyebrow">Het verschil</span>
+                    <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Het verschil</span>
                     <h2>Zo ziet verandering eruit</h2>
                     <div class="dash" style="margin:18px 0 0;"></div>
                     <p style="margin-top:20px;">De situatie links is precies waarmee mijn klanten binnenkomen. Rechts werken we samen naartoe.</p>
@@ -1078,7 +1234,7 @@
     <section class="container">
 
         <div class="title-block center">
-            <span class="eyebrow">Geschikt voor jou?</span>
+            <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Geschikt voor jou?</span>
             <h2>Ik werk niet met iedereen</h2>
             <div class="dash"></div>
         </div>
@@ -1115,7 +1271,7 @@
 
                 <div>
                     <div class="title-block left">
-                        <span class="eyebrow">Wat je nodig hebt</span>
+                        <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Wat je nodig hebt</span>
                         <h2>Zo ziet spiergroei eruit</h2>
                         <div class="dash"></div>
                     </div>
@@ -1139,7 +1295,7 @@
     <section class="container">
 
         <div class="title-block center">
-            <span class="eyebrow">Investering</span>
+            <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Investering</span>
             <h2>Dit is mijn aanbod</h2>
             <div class="dash"></div>
             <p>Eén traject, twee ritmes. Kies de frequentie die bij jouw situatie past. Alles wat je nodig hebt om te groeien zit in beide opties.</p>
@@ -1249,7 +1405,7 @@
         <div class="about-split">
 
             <div>
-                <span class="eyebrow">Over mij</span>
+                <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Over mij</span>
                 <h2>Als jij <span class="text-red">maximaal resultaat</span> behaald ben ik <span class="text-red">tevreden</span></h2>
                 <div class="dash" style="margin:20px 0 28px;"></div>
 
@@ -1274,20 +1430,35 @@
         </div>
 
         <div class="title-block center">
-            <span class="eyebrow">Meer van mij</span>
+            <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Meer van mij</span>
             <h2>Volg het proces</h2>
             <div class="dash"></div>
             <p>Ik deel mijn eigen weg naar het podium en praat tweewekelijks met andere lifters, coaches en experts in de podcast. Wil je meer zien? Kijk hier mee.</p>
         </div>
 
-        <div class="grid">
-            <div class="video-block">
-                <h3>Wedstrijdvoorbereiding</h3>
-                <iframe src="https://www.youtube.com/embed/videoseries?list=PLW6RedeTohsK2sBBG8h05LUjbqehYLdRK" title="Bodybuildwedstrijd voorbereiding" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="video-block">
-                <h3>Podcast</h3>
-                <iframe src="https://www.youtube.com/embed/videoseries?list=PLW6RedeTohsJB2mHH2ZAt44NofKtFpfO7" title="Harder Coaching Podcast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="videos-wrap">
+            <div class="videos-grid">
+
+                <div class="video-card">
+                    <h3>Wedstrijdvoorbereiding</h3>
+                    <p class="video-sub">Volg mijn weg naar het podium, van diet tot peak week.</p>
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/videoseries?si=Favm4M-I6-CyVKUr&amp;list=PLW6RedeTohsK2sBBG8h05LUjbqehYLdRK" title="Bodybuildwedstrijd voorbereiding" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Podcast</h3>
+                    <p class="video-sub">Gesprekken met lifters, coaches en experts, tweewekelijks.</p>
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/videoseries?si=zZ0E31tXyF9YcEuv&amp;list=PLW6RedeTohsJB2mHH2ZAt44NofKtFpfO7" title="Harder Coaching Podcast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-divider-badge">
+                    <img src="images/Berg_rood_Berg_Wit.png" alt="">
+                </div>
+
             </div>
         </div>
 
@@ -1297,7 +1468,7 @@
     <section class="container">
 
         <div class="title-block center">
-            <span class="eyebrow">Vragen</span>
+            <span class="eyebrow"><img class="eyebrow-icon" src="images/Berg_rood_Berg_Rood.png" alt="">Vragen</span>
             <h2>Veelgestelde vragen</h2>
             <div class="dash"></div>
         </div>
@@ -1334,7 +1505,10 @@
         </div>
     </section>
 
-    <footer>Harder Coaching</footer>
+    <footer>
+        <img class="footer-logo" src="images/Berg_rood_Harder+Coaching_Wit.png" alt="Harder Coaching logo">
+        <div class="footer-text">Harder Coaching</div>
+    </footer>
 
 </body>
 
