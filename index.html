@@ -787,30 +787,32 @@
         .timeline-items {
             position: relative;
             z-index: 1;
-            display: flex;
-            flex-direction: column;
             flex: 1;
             min-height: 0;
         }
 
         .timeline-item {
-            position: relative;
+            position: absolute;
             width: 58%;
-            flex: 1;
-            min-height: 0;
+            height: 17%;
         }
 
         .timeline-item.item-left {
-            align-self: flex-start;
+            left: 0;
         }
 
         .timeline-item.item-right {
-            align-self: flex-end;
+            right: 0;
         }
 
-        .timeline-item:not(:first-child) {
-            margin-top: -55px;
-        }
+        .timeline-item:nth-child(1) { top: 0%; z-index: 1; }
+        .timeline-item:nth-child(2) { top: 11.86%; z-index: 2; }
+        .timeline-item:nth-child(3) { top: 23.71%; z-index: 3; }
+        .timeline-item:nth-child(4) { top: 35.57%; z-index: 4; }
+        .timeline-item:nth-child(5) { top: 47.43%; z-index: 5; }
+        .timeline-item:nth-child(6) { top: 59.29%; z-index: 6; }
+        .timeline-item:nth-child(7) { top: 71.14%; z-index: 7; }
+        .timeline-item:nth-child(8) { top: 83%; z-index: 8; }
 
         .timeline-item img {
             width: 100%;
@@ -1103,24 +1105,26 @@
             }
 
             .timeline-items {
+                position: static;
                 display: flex;
                 flex-direction: column;
+                flex: none;
+                height: auto;
             }
 
             .timeline-item {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
                 width: 82% !important;
                 align-self: center !important;
-                flex: none;
+                height: clamp(160px, 45vw, 220px) !important;
                 margin-top: -30px !important;
             }
 
             .timeline-item:first-child {
                 margin-top: 0 !important;
-            }
-
-            .timeline-item img,
-            .timeline-placeholder {
-                height: clamp(160px, 45vw, 220px);
             }
 
             .videos-grid {
