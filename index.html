@@ -750,14 +750,8 @@
             display: grid;
             grid-template-columns: 1fr 1.05fr;
             gap: 70px;
-            align-items: start;
+            align-items: stretch;
             margin-bottom: 70px;
-        }
-
-        .photo-sticky {
-            position: sticky;
-            top: 100px;
-            align-self: start;
         }
 
         .photo-dash {
@@ -771,23 +765,84 @@
             margin: 18px auto 0;
         }
 
-        .photo-duo {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
+        /* ─── ABOUT TIMELINE ─────────────────────────────────── */
+
+        .timeline-wrap {
+            position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
-        .photo-duo img {
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: var(--red);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .timeline-items {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 58%;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .timeline-item.item-left {
+            align-self: flex-start;
+        }
+
+        .timeline-item.item-right {
+            align-self: flex-end;
+        }
+
+        .timeline-item:not(:first-child) {
+            margin-top: -55px;
+        }
+
+        .timeline-item img {
             width: 100%;
-            height: clamp(330px, 34vw, 470px);
+            height: 100%;
             object-fit: cover;
             border-radius: var(--radius);
             display: block;
+            border: 3px solid var(--light);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, .28);
         }
 
-        .photo-duo .offset {
-            margin-top: 50px;
-            margin-left: -24px;
+        .timeline-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius);
+            border: 2px dashed var(--red-light);
+            background: rgba(120, 0, 0, .06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 14px;
+        }
+
+        .timeline-placeholder span {
+            font-family: Oswald, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            color: var(--red);
+            line-height: 1.4;
         }
 
         /* ─── VIDEOS (Wedstrijdvoorbereiding / Podcast) ──────── */
@@ -1039,13 +1094,33 @@
                 gap: 32px;
             }
 
-            .photo-sticky {
-                position: static;
+            .timeline-wrap {
+                display: block;
             }
 
-            .photo-duo .offset {
-                margin-top: 0;
-                margin-left: 0;
+            .timeline-line {
+                display: none;
+            }
+
+            .timeline-items {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                width: 82% !important;
+                align-self: center !important;
+                flex: none;
+                margin-top: -30px !important;
+            }
+
+            .timeline-item:first-child {
+                margin-top: 0 !important;
+            }
+
+            .timeline-item img,
+            .timeline-placeholder {
+                height: clamp(160px, 45vw, 220px);
             }
 
             .videos-grid {
@@ -1357,7 +1432,7 @@
                 </tr>
 
                 <tr class="cat-row">
-                    <td colspan="3">Voeding & leefstijl</td>
+                    <td colspan="3">Voeding &amp; leefstijl</td>
                 </tr>
 
                 <tr>
@@ -1430,11 +1505,45 @@
                 <p>Wat mij drijft is simpel: zien dat iets werkt. Bij mezelf, bij mijn klanten en in de projecten waar ik aan werk. Niet zomaar meer doen, maar steeds beter begrijpen wat nodig is om verder te komen.</p>
             </div>
 
-            <div class="photo-sticky">
+            <div class="timeline-wrap">
                 <div class="photo-dash"></div>
-                <div class="photo-duo">
-                    <img src="images/JayWhey.webp" alt="Jerrel den Harder van Harder Coaching met Jay Whey tijdens het Jay Whey Muscle Camp in Thailand september 2025">
-                    <img class="offset" src="images/Henselmans.webp" alt="Jerrel den Harder van Harder Coaching met Menno Henselmans tijdens de uitreiking van de Henselmans PT Cursus in februari 2026">
+                <div class="timeline-line" aria-hidden="true"></div>
+                <div class="timeline-items">
+
+                    <div class="timeline-item item-left">
+                        <img src="images/RicoVerhoeven.webp" alt="Jerrel den Harder van Harder Coaching samen met Rico Verhoeven">
+                    </div>
+
+                    <div class="timeline-item item-right">
+                        <img src="images/StartLauraTeamMeet.webp" alt="Jerrel den Harder van Harder Coaching bij de start met Team Laura">
+                    </div>
+
+                    <div class="timeline-item item-left">
+                        <img src="images/PowerliftWedstrijd.webp" alt="Jerrel den Harder van Harder Coaching tijdens een powerliftwedstrijd">
+                    </div>
+
+                    <div class="timeline-item item-right">
+                        <img src="images/FotoshootArcher.webp" alt="Jerrel den Harder van Harder Coaching tijdens de Archer fotoshoot">
+                    </div>
+
+                    <div class="timeline-item item-left">
+                        <img src="images/JayWhey.webp" alt="Jerrel den Harder van Harder Coaching met Jay Whey tijdens het Jay Whey Muscle Camp in Thailand september 2025">
+                    </div>
+
+                    <div class="timeline-item item-right">
+                        <img src="images/Henselmans.webp" alt="Jerrel den Harder van Harder Coaching met Menno Henselmans tijdens de uitreiking van de Henselmans PT Cursus in februari 2026">
+                    </div>
+
+                    <div class="timeline-item item-left">
+                        <img src="images/StartKVK.webp" alt="Jerrel den Harder van Harder Coaching bij de start van zijn KVK-inschrijving">
+                    </div>
+
+                    <div class="timeline-item item-right">
+                        <div class="timeline-placeholder">
+                            <span>Foto bodybuildwedstrijd<br>volgt nog</span>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="photo-dash bottom"></div>
             </div>
