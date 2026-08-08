@@ -19,6 +19,8 @@ Zet je afbeeldingen in `public/images/` met exact deze bestandsnamen (dit zijn d
 - `Henselmans.webp`
 - `StartKVK.webp`
 - `Berg_rood_Harder_Los_Wit.png` (footer logo)
+- `favicon.svg`
+- `favicon-dark.svg`
 
 ## 2. Lokaal draaien
 
