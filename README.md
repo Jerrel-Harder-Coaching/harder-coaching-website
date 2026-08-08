@@ -29,35 +29,6 @@ npm run dev
 
 Opent op `http://localhost:5173`.
 
-## 3. Hosten op GitHub Pages
-
-**Stap 1 — repo aanmaken en pushen**
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<jouw-gebruikersnaam>/<repo-naam>.git
-git push -u origin main
-```
-
-**Stap 2 — `base` in `vite.config.js` aanpassen**
-
-Open `vite.config.js` en zet `base` op `/<repo-naam>/` (met slashes ervoor en erna), tenzij je een custom domain gebruikt — dan blijft het `/`.
-
-**Stap 3 — GitHub Pages inschakelen**
-
-Ga naar je repo op GitHub → *Settings* → *Pages* → bij "Build and deployment" kies je **Source: GitHub Actions**.
-
-**Stap 4 — klaar**
-
-Bij elke push naar `main` bouwt de meegeleverde workflow (`.github/workflows/deploy.yml`) de site automatisch en publiceert hem. Na de eerste run vind je de live URL bij *Settings → Pages*, meestal:
-
-```
-https://<jouw-gebruikersnaam>.github.io/<repo-naam>/
-```
-
 ## Structuur
 
 ```
@@ -66,5 +37,5 @@ src/
   App.jsx        # Zet alle secties in volgorde
   index.css      # Alle styling (1-op-1 overgenomen uit de originele CSS)
   main.jsx       # React entry point
-public/images/   # Hier komen jouw afbeeldingen
+public/images/   # Hier komen de afbeeldingen
 ```
